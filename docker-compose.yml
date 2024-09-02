@@ -20,7 +20,7 @@ services:
     #    - family-tree-app
     web-studio-ui:
         image: nginx:latest
-        container_name: family-tree-ui
+        container_name: web-studio-ui
         restart: always
         volumes:
             - ./ui/dist:/usr/share/nginx/html
