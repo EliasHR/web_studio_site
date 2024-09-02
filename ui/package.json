@@ -1,0 +1,46 @@
+{
+  "name": "codemodeui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
+  },
+  "dependencies": {
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "pinia": "^2.1.7",
+    "vue": "^3.4.29",
+    "vue-router": "^4.3.3",
+    "imagemin-webp": "^8.0.0",
+    "maska": "^3.0.2",
+    "swiper": "^11.1.10",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-imagemin": "^0.6.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.1",
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vheemstra/vite-plugin-imagemin": "^2.0.0",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "eslint": "^8.57.0",
+    "eslint-plugin-playwright": "^1.6.2",
+    "eslint-plugin-vue": "^9.23.0",
+    "jsdom": "^24.1.0",
+    "prettier": "^3.2.5",
+    "sass-embedded": "^1.77.8",
+    "vite": "^5.3.1",
+    "vite-plugin-vue-devtools": "^7.3.1",
+    "vitest": "^1.6.0"
+  }
+}
