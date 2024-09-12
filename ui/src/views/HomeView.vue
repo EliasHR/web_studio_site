@@ -7,18 +7,24 @@ import InstructionsComp from '@/components/InstructionsComp.vue'
 import TroublesComp from '@/components/TroublesComp.vue'
 import ReviewsComp from '@/components/ReviewsComp.vue'
 import AboutComp from '@/components/AboutComp.vue'
+import TechnologiesComp from '@/components/TechnologiesComp.vue'
+import FaqComp from '@/components/FaqComp.vue'
+import ContactsComp from '@/components/ContactsComp.vue'
 </script>
 
 <template>
     <top-comp />
     <main class="main">
         <services-comp />
-        <promo-comp />
-        <projects-comp />
         <instructions-comp />
+        <projects-comp />
+        <promo-comp />
         <about-comp />
         <troubles-comp />
+        <technologies-comp />
         <reviews-comp />
+        <faq-comp />
+        <contacts-comp />
     </main>
 </template>
 
@@ -26,5 +32,6 @@ import AboutComp from '@/components/AboutComp.vue'
 .main {
     display: grid;
     gap: 120px;
+    margin-bottom: 120px;
 }
 </style>

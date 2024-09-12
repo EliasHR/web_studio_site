@@ -34,15 +34,16 @@ export default {
     justify-content: center;
     align-items: center;
     gap: 5px;
+    white-space: nowrap;
 
     &:hover {
-        //background: var(--primary-colors-a4ad3c);
+        background: #6bb6fb;
         cursor: pointer;
     }
-    /* 
+
     &:focus {
-        border: 2px solid var(--primary-colors-8d9624);
-        background: var(--primary-colors-bbc274);
-    } */
+        border: 1px solid var(--primary-accent);
+        background: #6bb6fb;
+    }
 }
 </style>

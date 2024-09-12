@@ -27,7 +27,7 @@ export default {
     &__wrapper {
         position: relative;
         //height: 100%;
-        height: 433px;
+        /* height: 433px; */
     }
     &__title {
         position: absolute;

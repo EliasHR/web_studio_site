@@ -1,23 +1,23 @@
 services:
-    #family-tree-api:
-    #build:
-    #    context: ./api
-    #    dockerfile: Dockerfile
-    #container_name: family-tree-api
-    #command: sh -c "gunicorn family_tree.wsgi:application --bind 0.0.0.0:80"
-    #restart: always
-    #volumes:
-    #    - ./api:/api
-    #    - ./api/db.sqlite3:/api/db.sqlite3
-    #    - ./static:/static
-    #    - ./media:/media:rw
-    #ports:
-    #    - "5008:443"
-    #env_file:
-    #    - .env
-    #networks:
-    #    - proxy
-    #    - family-tree-app
+    web-studio-api:
+        build:
+            context: ./api
+            dockerfile: Dockerfile
+        container_name: web-studio-api
+        command: sh -c "gunicorn api.wsgi:application --bind 0.0.0.0:80"
+        restart: always
+        volumes:
+            - ./api:/api
+            - ./api/db.sqlite3:/api/db.sqlite3
+            - ./static:/static
+            - ./media:/media:rw
+        #ports:
+        #    - "5008:443"
+        #env_file:
+        #    - .env
+        networks:
+            - proxy
+            - web-studio-app
     web-studio-ui:
         image: nginx:latest
         container_name: web-studio-ui
@@ -25,8 +25,8 @@ services:
         volumes:
             - ./ui/dist:/usr/share/nginx/html
             - ./nginx/conf.d:/etc/nginx/conf.d
-        #    - ./static:/app/static
-        #    - ./media:/app/media
+            - ./static:/app/static
+            - ./media:/app/media
         #depends_on:
         #    - family-tree-api
         networks:

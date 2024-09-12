@@ -14,7 +14,7 @@ export default {
 .paragraph {
     //font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    color: var(--primary-colors-3b2406);
+    //color: var(--primary-colors-3b2406);
     margin: 0;
 }
 </style>

@@ -31,14 +31,14 @@
                 </div>
                 <div class="top__services">
                     <ul class="top__services-list">
-                        <li>Телеграм бот</li>
-                        <li>Интеграции с CRM, 1С, МойСклад</li>
-                        <li>Решения для бизнеса</li>
-                    </ul>
-                    <ul class="top__services-list">
-                        <li>Доработка</li>
-                        <li>Перенос</li>
-                        <li>Редизайн сайта</li>
+                        <li class="top__services-item">Телеграм бот</li>
+                        <li class="top__services-item">Интеграции с CRM, 1С, МойСклад</li>
+                        <li class="top__services-item top__services-item_gradient">
+                            Решения для бизнеса
+                        </li>
+                        <li class="top__services-item">Интеграции с CRM, 1С, МойСклад</li>
+                        <li class="top__services-item">Создание сайта</li>
+                        <li class="top__services-item">Доработка, перенос, редизайн</li>
                     </ul>
                 </div>
             </div>
@@ -63,23 +63,24 @@ export default {
 .top {
     padding: 24px 0;
     margin-bottom: 40px;
+    margin-top: 96px;
     &__wrapper {
         background: var(--primary-seryy);
         border-radius: 8px;
         height: 449px;
-        padding: 24px;
+        padding: 24px 24px 38px 24px;
+        box-sizing: border-box;
         display: flex;
-        align-items: center;
+        align-items: end;
         justify-content: space-between;
         margin-bottom: 47px;
     }
     &__title {
-        font: 700 44px / 1.31818 var(--font-family);
+        font: 700 60px / 1.3 var(--font11);
         color: var(--primary-white);
-        margin: 0;
+        @include reset-model;
     }
     &__title_gradient {
-        font: 700 44px / 1.31818 var(--font-family);
         background: linear-gradient(95deg, #badcff 0%, rgba(255, 255, 255, 0.96) 42%, #badcff 100%);
         background-clip: text;
         -webkit-background-clip: text;
@@ -120,18 +121,39 @@ export default {
     &__bottom-section {
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
-    }
-    &__services {
-        display: flex;
-        gap: 47px;
-        margin-right: 150px;
+        align-items: center;
     }
     &__services-list {
         @include reset-list;
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        flex-wrap: wrap;
+        gap: 16px;
+        max-width: 650px;
+    }
+    &__services-item {
+        border-radius: 8px;
+        padding: 6px 10px;
+        font: 400 14px / 1.71429 var(--font-family);
+        border: 2px solid var(--primary-accent);
+        box-sizing: border-box;
+    }
+    &__services-item_gradient {
+        border: none;
+        border-width: 2px;
+        background: linear-gradient(95deg, #badcff 0%, rgba(255, 255, 255, 0.96) 42%, #badcff 100%);
+        position: relative; /* Относительное позиционирование */
+        z-index: 2;
+        &::after {
+            content: ''; /* Пустое содержимое */
+            border-radius: 8px; /* Радиус скругления */
+            background-color: var(--primary-chernyy);
+            position: absolute; /* Абсолютное позиционирование */
+            left: 2px;
+            right: 2px;
+            top: 2px;
+            bottom: 2px; /* Положение псевдоэлемента */
+            z-index: -1; /* Размещаем ниже текста */
+        }
     }
 }
 </style>

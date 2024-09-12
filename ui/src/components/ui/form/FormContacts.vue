@@ -55,7 +55,7 @@
             @click.stop="submit"
             :isLoading="isLoading"
         >
-            Отправить
+            Заказать обратный звонок
         </button-middle>
         <p-super-small class="form__policy">
             Нажимая на кнопку, вы соглашаетесь с
@@ -70,10 +70,10 @@
 </template>
 
 <script>
-import ButtonMiddle from '@/components/buttons/ButtonMiddle.vue'
-import InputCustom from '@/components/form/InputCustom.vue'
-import TextareaCustom from '@/components/form/TextareaCustom.vue'
-import PSuperSmall from '@/components/typographics/PSuperSmall.vue'
+import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
+import InputCustom from '@/components/ui/form/InputCustom.vue'
+import TextareaCustom from '@/components/ui/form/TextareaCustom.vue'
+import PSuperSmall from '@/components/ui/typographics/PSuperSmall.vue'
 import { useVuelidate } from '@vuelidate/core'
 import { helpers, maxLength, minLength, required } from '@vuelidate/validators'
 import axios from 'axios'
@@ -121,9 +121,10 @@ export default {
     methods: {
         async sendMessage() {
             try {
+                const apiUrl = import.meta.env.VITE_VUE_APP_API_URL
                 this.isLoading = true
                 const response = await axios
-                    .post('https://famtreepicture.ru/api/send_application/', this.state, {
+                    .post(apiUrl + '/send_application/', this.state, {
                         headers: { 'X-CSRFToken': csrftoken }
                     })
                     .then((response) => {
@@ -161,7 +162,7 @@ export default {
             name: {
                 required: helpers.withMessage('Обязательное поле.', required),
                 maxLength: helpers.withMessage(
-                    'Имя не должно первышать 50 символов.',
+                    'Имя не должно превышать 50 символов.',
                     maxLength(50)
                 ),
                 minLength: helpers.withMessage('Слишком короткое имя.', minLength(1))
@@ -184,17 +185,16 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-    max-width: 352px;
+    max-width: 347px;
     &__field {
         margin-bottom: 16px;
     }
     &__label {
         font: 400 14px / 1.71429 var(--second-family);
-        color: var(--primary-colors-3b2406);
     }
     &__error {
         font: 600 14px / 1.71429 var(--second-family);
-        color: var(--secondary-accents-attention);
+        color: var(--secondary---error);
         margin: 0;
         margin-top: 6px;
     }
@@ -203,17 +203,18 @@ export default {
     }
     &__submit {
         margin: 16px 0;
+        width: 100%;
     }
     &__link {
         @include reset-link;
         text-decoration: underline;
         &:hover {
-            color: var(--primary-colors-a4ad3c);
+            color: var(--primary-accent);
         }
     }
     &__success {
         font: 600 14px / 1.71429 var(--second-family);
-        color: var(--secondary-accents-success);
+        color: var(--secondary---success);
     }
 }
 

@@ -33,7 +33,7 @@ export default {
         align-items: center;
         justify-content: center;
         border-radius: 8px;
-        background: var(--primary-seryy);
+        background: url('@/assets/img/instructions_bg.png') no-repeat;
         height: 292px;
     }
     &__title {

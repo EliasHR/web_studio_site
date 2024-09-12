@@ -16,24 +16,24 @@
         :loop="true"
         :speed="500"
     >
-        <!-- <swiper-slide :lazy="true" v-for="review in reviewsStore.reviews" v-bind:key="review.name"> -->
-        <swiper-slide>
+        <swiper-slide v-for="review in reviewsStore.reviews" v-bind:key="review.name"
+            ><!-- :lazy="true"  -->
             <div class="swiper-slide__wrapper">
                 <div class="swiper-slide__text-wrapper">
-                    <!-- <p-small class="swiper-slide__text">«{{ review.text }}»</p-small>
-                    <p class="swiper-slide__name">{{ review.name }}</p> -->
-                    <p-small class="swiper-slide__text"
+                    <p-small class="swiper-slide__text">«{{ review.text }}»</p-small>
+                    <p class="swiper-slide__name">{{ review.name }}</p>
+                    <!-- <p-small class="swiper-slide__text"
                         >«Мы сообществом дизайнеров обратились за помощью, чтобы создать для нас
                         чат-бот, который бы собирал по ключевым словам нужные задания на бирже
                         фриланса. Мы заплатили 30.000 руб. и буквально за пару заказов мы окупили
                         вложенные средства. Чат-бот в наше время очень выручает. Невозможно
                         постоянно сидеть на сайте и мониторить заказы. Теперь телеграм бот присылает
                         сообщение о поступающих заданиях с сайта и позволяет быстро реагировать и
-                        отзываться на работу. Спасибо, ребят!»</p-small
+                        отзываться на работу. Спасибо!»</p-small
                     >
-                    <p class="swiper-slide__name">Татьяна Брусянцева, дизайнер</p>
+                    <p class="swiper-slide__name">Татьяна Брусянцева, дизайнер</p> -->
                 </div>
-                <!--  <picture>
+                <picture v-if="review.src">
                     <source media="(min-width: 768px)" :srcset="review.srcset_desktop" />
                     <source media="(min-width: 400px)" :srcset="review.srcset_tablet" />
                     <source media="(max-width: 399.99px)" :srcset="review.srcset_mobile" />
@@ -43,9 +43,14 @@
                         :alt="review.alt"
                         class="swiper-slide__image"
                     />
-                </picture> -->
-                <picture class="swiper-slide__image">
-                    <!-- <img loading="lazy" src="#" alt="#" class="swiper-slide__image" /> -->
+                </picture>
+                <picture class="swiper-slide__image" v-else>
+                    <img
+                        loading="lazy"
+                        src="@/assets/img/reviews_comma.png"
+                        alt="Большая кавычка"
+                        class="swiper-slide__image"
+                    />
                 </picture>
             </div>
         </swiper-slide>
@@ -71,7 +76,7 @@ import 'swiper/css/autoplay'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 
-//import { useReviewStore } from '@/stores/reviews'
+import { useReviewStore } from '@/stores/reviews'
 
 export default {
     name: 'swiper-comp',
@@ -83,27 +88,27 @@ export default {
         SwiperPrev
     },
     setup() {
-        //const reviewsStore = useReviewStore()
+        const reviewsStore = useReviewStore()
         return {
-            modules: [Navigation, Pagination, Autoplay]
-            //reviewsStore
+            modules: [Navigation, Pagination, Autoplay],
+            reviewsStore
         }
-    }
-    /* mounted() {
+    },
+    mounted() {
         this.reviewsStore.getReviews()
-    } */
+    }
 }
 </script>
 
 <style lang="scss">
 .swiper {
-    width: 1148px;
+    width: 1152px;
     height: 100%;
 
     &-slide {
         &__wrapper {
             display: grid;
-            gap: 90px;
+            gap: 66px;
             grid-template-columns: auto auto;
         }
         &__text {
@@ -118,6 +123,7 @@ export default {
             font: 700 20px / 1.7 var(--font4);
             color: var(--primary-colors-3b2406);
             text-align: right;
+            //margin-bottom: 40px;
         }
         &__image {
             //width: 515px;
@@ -149,15 +155,20 @@ export default {
     &-button-next-custom,
     &-button-prev-custom {
         cursor: pointer;
-        &-pagination-custom {
-            display: flex;
-            justify-content: center;
-        }
+    }
+    &-pagination-custom {
+        margin-left: 24px;
+        display: flex;
+        //justify-content: center;
     }
     &-pagination-bullet {
         border-radius: 50%;
+        background: var(--pagination-bullet) !important;
+        box-sizing: border-box;
+        opacity: 1;
         &-active {
-            background: var(--primary-colors-6e4b1a) !important;
+            background: none !important;
+            border: 1px solid var(--pagination-bullet);
         }
     }
 }

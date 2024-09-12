@@ -16,7 +16,7 @@ export default {
 
 <style lang="scss" scoped>
 .textarea {
-    border: 1px solid var(--primary-colors-86755d);
+    border: 2px solid var(--primary-accent);
     border-radius: 8px;
     height: 48px;
     width: 100%;
@@ -24,16 +24,16 @@ export default {
     border-radius: 5px;
     box-sizing: border-box;
     outline: none;
-    color: var(--primary-colors-404511);
+    //color: var(--primary-colors-404511);
     resize: none;
     height: 80px;
     &::placeholder {
-        color: var(--primary-colors-bbc274);
+        color: var(--neutral---400);
         opacity: 1;
     }
     &:focus,
     &:active {
-        border-color: var(--primary-colors-404511);
+        //border-color: var(--primary-colors-404511);
     }
 }
 </style>

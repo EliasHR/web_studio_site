@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 .logo {
     &__text {
-        font: 400 14px / 1 var(--font-family);
+        font: 400 11px / 0.42857 var(--font-family);
         color: var(--primary-chernyy);
     }
     &__link {

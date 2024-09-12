@@ -4,7 +4,6 @@
             <h2-custom class="services__title">Наши услуги</h2-custom>
             <div class="services__wrapper">
                 <div class="services__item">
-                    <div class="services__item-image"></div>
                     <div class="services__item-wrapper">
                         <div class="services__item-info">
                             <h3-custom class="services__item-title">Сайты и сервисы</h3-custom>
@@ -25,25 +24,6 @@
                     </div>
                 </div>
                 <div class="services__item">
-                    <div class="services__item-image"></div>
-                    <div class="services__item-wrapper">
-                        <div class="services__item-info">
-                            <h3-custom class="services__item-title">Дизайн</h3-custom>
-                            <div class="services__item-price">от 10.000 руб.</div>
-                            <div class="services__item-list">
-                                <p-super-small>
-                                    Переработка существующего интерфейса или создание нового
-                                </p-super-small>
-                                <p-super-small>Улучшение и доработка дизайн проекта</p-super-small>
-                                <p-super-small>Создание логотипа и фирменного стиля</p-super-small>
-                                <p-super-small> Дизайн-сопровождение </p-super-small>
-                            </div>
-                        </div>
-                        <button-small class="services__item-button">Оставить заявку</button-small>
-                    </div>
-                </div>
-                <div class="services__item">
-                    <div class="services__item-image"></div>
                     <div class="services__item-wrapper">
                         <div class="services__item-info">
                             <h3-custom class="services__item-title">Чат-боты</h3-custom>
@@ -52,6 +32,23 @@
                                 <p-super-small> Телеграм-боты для коммуникации </p-super-small>
                                 <p-super-small>Функциональные боты </p-super-small>
                                 <p-super-small>Калькуляторы, парсеры и пр.</p-super-small>
+                            </div>
+                        </div>
+                        <button-small class="services__item-button">Оставить заявку</button-small>
+                    </div>
+                </div>
+                <div class="services__item">
+                    <div class="services__item-wrapper">
+                        <div class="services__item-info">
+                            <h3-custom class="services__item-title">Дизайн</h3-custom>
+                            <div class="services__item-price">от 10.000 руб.</div>
+                            <div class="services__item-list">
+                                <p-super-small> Дизайн-сопровождение </p-super-small>
+                                <p-super-small>
+                                    Переработка существующего интерфейса или создание нового
+                                </p-super-small>
+                                <p-super-small>Улучшение и доработка дизайн проекта</p-super-small>
+                                <p-super-small>Создание логотипа и фирменного стиля</p-super-small>
                             </div>
                         </div>
                         <button-small class="services__item-button">Оставить заявку</button-small>
@@ -85,14 +82,14 @@ export default {
         padding-left: 24px;
     }
     &__wrapper {
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 28px;
     }
     &__item {
         border-radius: 8px;
-        padding: 24px 50px;
-        max-width: 364px;
-        height: 534px;
+        padding: 24px 28px;
+        max-width: 365px;
         background: var(--primary-seryy);
         display: flex;
         flex-direction: column;
@@ -106,12 +103,7 @@ export default {
         flex-direction: column;
         align-items: center;
         height: 100%;
-    }
-    &__item-image {
-        width: 265px;
-        height: 116px;
-        background: var(--neutral---300);
-        margin-bottom: 24px;
+        gap: 16px;
     }
     &__item-list {
         display: flex;
