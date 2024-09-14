@@ -133,7 +133,7 @@ export default {
                 case '320':
                     return project.cover_314_webp ? project.cover_314_webp : project.cover_314
                 default:
-                    return project.cover_default
+                    return project.cover_314_webp ? project.cover_314_webp : project.cover_314
             }
         }
     }
