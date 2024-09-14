@@ -132,8 +132,6 @@ export default {
                     return project.cover_380_webp ? project.cover_380_webp : project.cover_380
                 case '320':
                     return project.cover_314_webp ? project.cover_314_webp : project.cover_314
-                default:
-                    return project.cover_314_webp ? project.cover_314_webp : project.cover_314
             }
         }
     }

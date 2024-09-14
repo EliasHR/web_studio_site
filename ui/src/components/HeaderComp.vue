@@ -115,7 +115,7 @@ export default {
             width: auto;
         }
         &__button-mobile {
-            padding: 0 20px;
+            padding: 0 15px;
         }
     }
 }
