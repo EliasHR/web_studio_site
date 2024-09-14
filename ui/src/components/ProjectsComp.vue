@@ -1,5 +1,5 @@
 <template>
-    <section class="projects">
+    <section class="projects" id="examples">
         <div class="container">
             <h2-custom class="projects__title">Наши проекты</h2-custom>
             <div class="projects__wrapper">
@@ -7,7 +7,9 @@
                     <a href="#" class="projects__link">
                         <div
                             class="projects__item-bg"
-                            :style="{ backgroundImage: `url(${projectsStore.projects[0].cover})` }"
+                            :style="{
+                                backgroundImage: `url(${getCoverImage(projectsStore.projects[0])})`
+                            }"
                         >
                             <h3
                                 class="projects__item-title"
@@ -30,7 +32,7 @@
                     <a href="#" class="projects__link">
                         <div
                             class="projects__item-bg"
-                            :style="{ backgroundImage: `url(${project.cover})` }"
+                            :style="{ backgroundImage: `url(${getCoverImage(project)})` }"
                         >
                             <h3
                                 class="projects__item-title"
@@ -76,6 +78,11 @@ export default {
     components: {
         H2Custom
     },
+    data() {
+        return {
+            currentBreakpoint: ''
+        }
+    },
     setup() {
         const projectsStore = useProjectStore()
         return {
@@ -84,12 +91,58 @@ export default {
     },
     mounted() {
         this.projectsStore.getProjects()
+        // Проверка ширины экрана при загрузке
+        this.checkScreenWidth()
+
+        // Добавление слушателя для изменения ширины экрана
+        window.addEventListener('resize', this.checkScreenWidth)
+    },
+    beforeUnmount() {
+        // Удаление слушателя при уничтожении компонента
+        window.removeEventListener('resize', this.checkScreenWidth)
+    },
+    methods: {
+        checkScreenWidth() {
+            const width = window.innerWidth
+            if (width >= 1200) {
+                this.currentBreakpoint = '1200'
+            } else if (width >= 992) {
+                this.currentBreakpoint = '992'
+            } else if (width >= 768) {
+                this.currentBreakpoint = '768'
+            } else if (width >= 575) {
+                this.currentBreakpoint = '575'
+            } else if (width >= 400) {
+                this.currentBreakpoint = '400'
+            } else {
+                this.currentBreakpoint = '320'
+            }
+        },
+        getCoverImage(project) {
+            switch (this.currentBreakpoint) {
+                case '1200':
+                    return project.cover_webp ? project.cover_webp : project.cover
+                case '992':
+                    return project.cover_960_webp ? project.cover_960_webp : project.cover_960
+                case '768':
+                    return project.cover_740_webp ? project.cover_740_webp : project.cover_740
+                case '575':
+                    return project.cover_560_webp ? project.cover_560_webp : project.cover_560
+                case '400':
+                    return project.cover_380_webp ? project.cover_380_webp : project.cover_380
+                case '320':
+                    return project.cover_314_webp ? project.cover_314_webp : project.cover_314
+                default:
+                    return project.cover_default
+            }
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
 .projects {
+    scroll-margin-top: 96px;
     &__title {
         margin-bottom: 24px;
     }
@@ -152,5 +205,49 @@ export default {
         margin-bottom: 18px;
         margin-right: 18px;
     }
+}
+
+@media (max-width: 1199.99px) {
+    .projects {
+        &__wrapper {
+            gap: 28px;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: auto;
+        }
+
+        & .projects__item:last-child {
+            grid-column: 2;
+        }
+    }
+}
+
+@media (max-width: 991.99px) {
+    .projects {
+        scroll-margin-top: 64px;
+        &__title {
+            text-align: center;
+        }
+        &__wrapper {
+            gap: 16px;
+            grid-template-columns: auto;
+            grid-template-rows: auto;
+            //grid-auto-rows: auto;
+        }
+        & .projects__item:first-child {
+            grid-column: 1;
+        }
+        & .projects__item:last-child {
+            grid-column: 1;
+        }
+    }
+}
+
+@media (max-width: 767.99px) {
+}
+
+@media (max-width: 574.99px) {
+}
+
+@media (max-width: 399.99px) {
 }
 </style>

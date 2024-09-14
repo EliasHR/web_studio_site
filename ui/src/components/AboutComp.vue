@@ -1,5 +1,5 @@
 <template>
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <!-- <img
                 class="about__image"
@@ -51,7 +51,22 @@
                         </div>
                     </div>
                     <div class="about__swiper">
-                        <img src="@/assets/img/about.png" alt="" srcset="" />
+                        <picture>
+                            <source
+                                srcset="@/assets/img/about_320.png"
+                                media="(max-width: 399.99px)"
+                            />
+                            <source
+                                srcset="@/assets/img/about_740.png"
+                                media="(max-width: 991.99px)"
+                            />
+                            <source
+                                srcset="@/assets/img/about_960.png"
+                                media="(max-width: 1199.99px)"
+                            />
+
+                            <img src="@/assets/img/about.png" alt="" srcset="" />
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -76,26 +91,7 @@ export default {
 
 <style lang="scss" scoped>
 .about {
-    /*     scroll-margin-top: 64px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 32px; */
-
-    /* &__title {
-        margin-bottom: 32px;
-    }
-    &__text {
-        font-style: italic;
-        margin-bottom: 8px;
-    } */
-    /*     &__author {
-        font: 700 20px / 1.7 var(--font4);
-        color: var(--primary-colors-3b2406);
-        margin-top: 32px;
-        text-align: right;
-    } */
+    scroll-margin-top: 96px;
     &__content {
         position: relative;
     }
@@ -109,12 +105,13 @@ export default {
         display: flex;
         justify-content: space-between;
         gap: 76px;
+        padding: 0 24px;
     }
     &__text-wrapper {
         display: flex;
         flex-direction: column;
         gap: 24px;
-        padding: 78px 24px 0px 24px;
+        padding: 78px 0px 0px 0px;
     }
     &__text_highlighted {
         border-radius: 8px;
@@ -142,59 +139,64 @@ export default {
 
 @media (max-width: 1199.99px) {
     .about {
-        gap: 28px;
-        &__section {
-            gap: 28px;
-        }
-        &__image {
-            width: 467px;
+        &__title {
+            left: 0px;
         }
     }
 }
 
 @media (max-width: 991.99px) {
     .about {
-        &__image {
-            width: 370px;
+        scroll-margin-top: 64px;
+        &__title {
+            left: 50%;
+            transform: translateX(-50%);
         }
-        &__text {
-            font-size: 14px;
+        &__wrapper {
+            flex-direction: column;
+        }
+        &__text-wrapper {
+            padding: 62px 0px 0px 0px;
+        }
+        &__swiper {
+            width: 380px;
+            height: 286px;
+        }
+        &__wrapper {
+            gap: 24px;
+            align-items: center;
         }
     }
 }
 
 @media (max-width: 767.99px) {
     .about {
-        gap: 28px;
-        &__section {
-            flex-direction: column-reverse;
-            align-items: center;
+        &__text-wrapper {
             gap: 16px;
-            &:last-child {
-                flex-direction: column;
-            }
-        }
-        &__image {
-            width: 368px;
-            height: auto;
-        }
-        &__title {
-            margin-bottom: 24px;
         }
     }
 }
 
 @media (max-width: 574.99px) {
+    .about {
+        &__wrapper {
+            padding: 0;
+        }
+
+        &__text-wrapper {
+            padding: 62px 8px 0px 8px;
+        }
+    }
 }
 
 @media (max-width: 399.99px) {
     .about {
-        gap: 20px;
-        &__image {
-            width: 314px;
+        &__text-wrapper {
+            padding: 62px 4px 0px 4px;
         }
-        &__title {
-            margin-bottom: 16px;
+        &__swiper {
+            width: 314px;
+            height: 286px;
         }
     }
 }

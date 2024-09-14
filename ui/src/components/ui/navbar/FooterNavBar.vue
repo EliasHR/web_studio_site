@@ -30,10 +30,22 @@ export default {
     }
 }
 
-/* @media (max-width: 1199.99px) {
-    .nav-bar {
-        display: flex;
-        gap: 30px;
+@media (max-width: 1199.99px) {
+}
+
+@media (max-width: 991.99px) {
+}
+
+@media (max-width: 767.99px) {
+    .footer-nav-bar {
+        justify-content: space-between;
+        gap: 16px;
     }
-} */
+}
+
+@media (max-width: 574.99px) {
+}
+
+@media (max-width: 399.99px) {
+}
 </style>

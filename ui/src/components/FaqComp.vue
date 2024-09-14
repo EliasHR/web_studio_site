@@ -159,44 +159,46 @@ export default {
 }
 
 @media (max-width: 1199.99px) {
+    .faq {
+        &__wrapper {
+            padding: 0;
+        }
+        &__title {
+            padding-left: 0;
+        }
+    }
 }
 
 @media (max-width: 991.99px) {
     .faq {
-        width: 740px;
+        &__title {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        &__wrapper {
+            padding: 0 24px;
+        }
+        &__question-content {
+            width: auto;
+        }
     }
 }
 
 @media (max-width: 767.99px) {
-    .faq {
-        width: 560px;
-    }
 }
 
 @media (max-width: 574.99px) {
     .faq {
-        width: 368px;
-        &__question {
-            &-title {
-                &-text {
-                    font-size: 16px;
-                    line-height: 1.75;
-                }
-            }
-            &-content {
-                width: 368px;
-            }
+        &__wrapper {
+            padding: 0 8px;
         }
     }
 }
 
 @media (max-width: 399.99px) {
     .faq {
-        width: 314px;
-        &__question {
-            &-content {
-                width: 314px;
-            }
+        &__wrapper {
+            padding: 0;
         }
     }
 }

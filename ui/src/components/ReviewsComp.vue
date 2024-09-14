@@ -1,5 +1,5 @@
 <template>
-    <section class="reviews">
+    <section class="reviews" id="reviews">
         <div class="container">
             <div class="reviews__wrapper">
                 <h2-custom class="reviews__title">Отзывы наших клиентов</h2-custom>
@@ -24,10 +24,9 @@ export default {
 
 <style lang="scss" scoped>
 .reviews {
+    scroll-margin-top: 96px;
     &__wrapper {
         position: relative;
-        //height: 100%;
-        /* height: 433px; */
     }
     &__title {
         position: absolute;
@@ -40,11 +39,21 @@ export default {
 }
 
 @media (max-width: 1199.99px) {
+    .reviews {
+        &__title {
+            left: 0;
+        }
+    }
 }
 
 @media (max-width: 991.99px) {
     .reviews {
-        height: 750px;
+        scroll-margin-top: 64px;
+        &__title {
+            position: static;
+            text-align: center;
+            margin-bottom: 24px;
+        }
     }
 }
 
@@ -55,8 +64,5 @@ export default {
 }
 
 @media (max-width: 399.99px) {
-    .reviews {
-        height: 680px;
-    }
 }
 </style>

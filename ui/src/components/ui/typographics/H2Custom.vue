@@ -21,22 +21,18 @@ export default {
 }
 
 @media (max-width: 1199.99px) {
-    .h2 {
-        font-size: 28px;
-        line-height: 1.52;
-    }
 }
 @media (max-width: 991.99px) {
     .h2 {
-        font-size: 26px;
-        line-height: 1.49;
+        font-size: 24px;
+        line-height: 1.58333;
     }
 }
 
 @media (max-width: 767.99px) {
     .h2 {
-        font-size: 24px;
-        line-height: 1.46;
+        /* font-size: 24px;
+        line-height: 1.46; */
     }
 }
 </style>

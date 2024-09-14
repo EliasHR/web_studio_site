@@ -4,8 +4,8 @@
 
         <div class="gift__wrapper">
             <div class="gift__text">
-                <p-small>Скачать бесплатно</p-small>
-                <p-small><a class="gift__link" href="">Оптимизация сайта.pdf</a></p-small>
+                <div>Скачать бесплатно</div>
+                <div><a class="gift__link" href="">Оптимизация сайта.pdf</a></div>
             </div>
             <gift-download class="geft__download" />
         </div>
@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .gift {
-    width: 276px;
+    width: 252px;
     height: 80px;
     margin-left: 24px;
     box-shadow: 0 4px 0 0 #007bff;
@@ -40,11 +40,10 @@ export default {
     &__text {
         font: 400 14px / 1.71429 var(--font-family);
         color: #000;
-        margin-bottom: 12px;
     }
     &__wrapper {
         display: flex;
-        padding: 12px 20px;
+        padding: 16px 20px;
         justify-content: space-between;
         align-items: center;
     }
@@ -52,5 +51,19 @@ export default {
         @include reset-link;
         text-decoration: underline;
     }
+}
+@media (max-width: 1199.99px) {
+}
+
+@media (max-width: 991.99px) {
+}
+
+@media (max-width: 767.99px) {
+}
+
+@media (max-width: 574.99px) {
+}
+
+@media (max-width: 399.99px) {
 }
 </style>

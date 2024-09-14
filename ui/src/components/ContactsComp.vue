@@ -1,5 +1,5 @@
 <template>
-    <section class="contacts">
+    <section class="contacts" id="contacts">
         <div class="container">
             <h2-custom class="contacts__title">Контакты</h2-custom>
             <div class="contacts__wrapper">
@@ -36,6 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 .contacts {
+    scroll-margin-top: 96px;
     &__title {
         padding-left: 24px;
         margin-bottom: 34px;
@@ -50,7 +51,8 @@ export default {
         min-height: 502px;
         padding: 15px 68px;
         border-radius: 8px;
-        background: url('@/assets/img/contacts_bg.png') no-repeat center / cover;
+        background: url('@/assets/img/contacts_bg.png') no-repeat;
+        background-size: 100% 100%;
     }
     &__content {
         display: flex;
@@ -86,22 +88,48 @@ export default {
 }
 
 @media (max-width: 1199.99px) {
-
+    .contacts {
+        &__title {
+            padding-left: 0px;
+        }
+    }
 }
 
 @media (max-width: 991.99px) {
-
+    .contacts {
+        scroll-margin-top: 64px;
+        &__title {
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        &__wrapper {
+            flex-direction: column;
+            gap: 65px;
+            min-height: 707px;
+            background: url('@/assets/img/contacts_bg_740.png') no-repeat center / cover;
+        }
+        &__content {
+            align-items: center;
+        }
+    }
 }
 
 @media (max-width: 767.99px) {
-
 }
 
 @media (max-width: 574.99px) {
-    
+    .contacts {
+        &__wrapper {
+            padding: 15px;
+        }
+    }
 }
 
 @media (max-width: 399.99px) {
-
+    .contacts {
+        &__wrapper {
+            padding: 15px 24px;
+        }
+    }
 }
 </style>

@@ -227,20 +227,20 @@ export default {
 //@media (max-width: 767.99px) {}
 
 @media (max-width: 574.99px) {
-    .form {
+    /* .form {
         &__submit {
             font-size: 14px;
             line-height: 1.71429;
         }
-    }
+    } */
 }
 
 @media (max-width: 399.99px) {
-    .form {
+    /* .form {
         max-width: 294px;
         &__submit {
             max-width: 294px;
         }
-    }
+    } */
 }
 </style>

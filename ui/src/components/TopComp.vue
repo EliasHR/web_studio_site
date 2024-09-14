@@ -22,7 +22,17 @@
                         <button-middle class="top__tg-link">Написать в телеграм</button-middle>
                     </div>
                 </div>
-                <img class="top__illustration" src="@/assets/img/top_illustration.png" />
+                <picture>
+                    <source
+                        srcset="@/assets/img/top_illustration_560.png"
+                        media="(max-width: 767.99px)"
+                    />
+                    <source
+                        srcset="@/assets/img/top_illustration_960.png"
+                        media="(max-width: 1199.99px)"
+                    />
+                    <img class="top__illustration" src="@/assets/img/top_illustration.png" />
+                </picture>
             </div>
 
             <div class="top__bottom-section">
@@ -117,6 +127,10 @@ export default {
     &__tg-link {
         @include reset-button;
         width: 266px;
+        &:hover {
+            background: none;
+            text-decoration: underline;
+        }
     }
     &__bottom-section {
         display: flex;
@@ -144,15 +158,124 @@ export default {
         position: relative; /* Относительное позиционирование */
         z-index: 2;
         &::after {
-            content: ''; /* Пустое содержимое */
-            border-radius: 8px; /* Радиус скругления */
+            content: '';
+            border-radius: 8px;
             background-color: var(--primary-chernyy);
-            position: absolute; /* Абсолютное позиционирование */
+            position: absolute;
             left: 2px;
             right: 2px;
             top: 2px;
-            bottom: 2px; /* Положение псевдоэлемента */
-            z-index: -1; /* Размещаем ниже текста */
+            bottom: 2px;
+            z-index: -1;
+        }
+    }
+}
+
+@media (max-width: 1199.99px) {
+    .top {
+        &__illustration {
+            margin-bottom: 80px;
+        }
+    }
+}
+
+@media (max-width: 991.99px) {
+    .top {
+        margin-bottom: 24px;
+        margin-top: 64px;
+        &__wrapper {
+            height: 336px;
+            position: relative;
+        }
+        &__title {
+            font: 700 32px / 1.21875 var(--font11);
+        }
+        &__text {
+            font: 400 14px / 1.71429 var(--font-family);
+            max-width: 284px;
+        }
+        &__illustration {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            margin: 0;
+            z-index: 0;
+        }
+        &__tg-link {
+            z-index: 1;
+        }
+        &__bottom-section {
+            align-items: start;
+            flex-direction: column;
+            gap: 48px;
+        }
+    }
+}
+
+@media (max-width: 767.99px) {
+    .top {
+        &__wrapper {
+            height: 558px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            margin-bottom: 24px;
+            padding: 24px;
+            gap: 16px;
+        }
+        &__title {
+            text-align: center;
+        }
+        &__text {
+            max-width: 100%;
+        }
+        &__info {
+            align-items: center;
+            gap: 40px;
+        }
+        &__info-text {
+            align-items: center;
+        }
+        &__illustration {
+            position: inherit;
+        }
+        &__actions {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &__bottom-section {
+            align-items: center;
+            gap: 24px;
+        }
+        &__services-list {
+            gap: 12px;
+        }
+    }
+}
+
+@media (max-width: 574.99px) {
+    .top {
+        &__wrapper {
+            padding: 16px;
+        }
+        &__info {
+            gap: 16px;
+        }
+        &__text {
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 399.99px) {
+    .top {
+        &__wrapper {
+            // padding: 16px;
+            padding-bottom: 0;
+        }
+        &__info {
+            gap: 8px;
         }
     }
 }

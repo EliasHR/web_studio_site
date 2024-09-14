@@ -1,5 +1,5 @@
 <template>
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
             <h2-custom class="services__title">Наши услуги</h2-custom>
             <div class="services__wrapper">
@@ -16,7 +16,7 @@
                                 <p-super-small>Доработка функционала</p-super-small>
                                 <p-super-small>Перенос сайта</p-super-small>
                                 <p-super-small>
-                                    Техничекая поддержка и администрирование сайта
+                                    Техническая поддержка и администрирование сайта
                                 </p-super-small>
                             </div>
                         </div>
@@ -29,9 +29,10 @@
                             <h3-custom class="services__item-title">Чат-боты</h3-custom>
                             <div class="services__item-price">от 30.000 руб.</div>
                             <div class="services__item-list">
-                                <p-super-small> Телеграм-боты для коммуникации </p-super-small>
+                                <p-super-small>Телеграм-боты для коммуникации </p-super-small>
                                 <p-super-small>Функциональные боты </p-super-small>
                                 <p-super-small>Калькуляторы, парсеры и пр.</p-super-small>
+                                <p-super-small>Интеграция с различными сервисами</p-super-small>
                             </div>
                         </div>
                         <button-small class="services__item-button">Оставить заявку</button-small>
@@ -43,7 +44,7 @@
                             <h3-custom class="services__item-title">Дизайн</h3-custom>
                             <div class="services__item-price">от 10.000 руб.</div>
                             <div class="services__item-list">
-                                <p-super-small> Дизайн-сопровождение </p-super-small>
+                                <p-super-small>Дизайн-сопровождение </p-super-small>
                                 <p-super-small>
                                     Переработка существующего интерфейса или создание нового
                                 </p-super-small>
@@ -77,8 +78,9 @@ export default {
 
 <style lang="scss" scoped>
 .services {
+    scroll-margin-top: 96px;
     &__title {
-        margin-bottom: 28px;
+        margin-bottom: 34px;
         padding-left: 24px;
     }
     &__wrapper {
@@ -123,6 +125,63 @@ export default {
     }
     &__item-button {
         width: 168px;
+    }
+}
+@media (max-width: 1199.99px) {
+    .services {
+        &__title {
+            padding-left: 0;
+        }
+    }
+}
+
+@media (max-width: 991.99px) {
+    .services {
+        scroll-margin-top: 64px;
+        &__title {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        &__wrapper {
+            gap: 16px;
+        }
+        &__item {
+            padding: 24px 20px;
+        }
+    }
+}
+
+@media (max-width: 767.99px) {
+    .services {
+        &__wrapper {
+            grid-template-columns: auto;
+        }
+        /* &__title {
+            text-align: center;
+            margin-bottom: 24px;
+        } */
+
+        &__item {
+            //padding: 24px 20px;
+            max-width: 100%;
+        }
+        &__item-list {
+            max-width: 316px;
+        }
+        &__item-button {
+            height: 48px;
+        }
+    }
+}
+
+@media (max-width: 574.99px) {
+}
+
+@media (max-width: 399.99px) {
+    .services {
+        &__item {
+            padding: 24px 0px;
+        }
     }
 }
 </style>

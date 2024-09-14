@@ -6,7 +6,9 @@
                 <div class="footer__content">
                     <div class="footer__content-contacts">
                         <p-small>Армения, Ереван</p-small>
-                        <p-small>info@codemode.net</p-small>
+                        <a href="mailto:info@codemode.net" class="footer__link"
+                            ><p-small>info@codemode.net</p-small></a
+                        >
                         <div class="footer__content-social">
                             <a href="#"><footer-whats-app /></a>
                             <a href="#"><footer-telegram /></a>
@@ -16,7 +18,7 @@
                         <footer-nav-bar />
                     </div>
                 </div>
-                <p-small class="footer__copyright">© 2022-2024 Code mode</p-small>
+                <p-small class="footer__copyright">© 2022-{{ currentYear }} Code mode</p-small>
             </div>
         </div>
     </footer>
@@ -37,6 +39,11 @@ export default {
         FooterWhatsApp,
         FooterTelegram,
         FooterNavBar
+    },
+    data() {
+        return {
+            currentYear: new Date().getFullYear()
+        }
     }
 }
 </script>
@@ -66,8 +73,54 @@ export default {
         display: flex;
         gap: 12px;
     }
+    &__link {
+        color: var(--primary-white);
+        &:hover {
+            color: var(--primary-accent);
+        }
+    }
     &__copyright {
         text-align: center;
     }
+}
+@media (max-width: 1199.99px) {
+    .footer {
+        &__title {
+            padding-left: 0px;
+        }
+        &__wrapper {
+            padding: 0;
+        }
+    }
+}
+
+@media (max-width: 991.99px) {
+    .footer {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 767.99px) {
+    .footer {
+        &__title {
+            text-align: center;
+        }
+        &__content {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        &__content-contacts {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+}
+
+@media (max-width: 574.99px) {
+}
+
+@media (max-width: 399.99px) {
 }
 </style>

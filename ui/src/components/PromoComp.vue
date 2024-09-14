@@ -3,8 +3,7 @@
         <div class="container">
             <div class="promo__wrapper">
                 <h2 class="promo__title">
-                    Обычно к нам обращаются, когда нужно:<br />
-                    разработать телеграм бота или создать сайт
+                    Обычно к нам обращаются, когда нужно: разработать телеграм бота или создать сайт
                 </h2>
                 <a href="#">
                     <button-middle class="promo__button">Обратиться</button-middle>
@@ -42,6 +41,7 @@ export default {
         color: var(--primary-white);
         margin: 0;
         margin-bottom: 24px;
+        max-width: 845px;
     }
     &__button {
         width: 266px;
@@ -49,73 +49,30 @@ export default {
 }
 @media (max-width: 1399.99px) {
 }
-/* 
+
 @media (max-width: 1199.99px) {
-    .promo {
-        &__wrapper {
-            width: 960px;
-            background-position: 100% 100%;
-        }
-        &__title {
-            font-size: 28px;
-            line-height: 1.52;
-        }
-    }
 }
 
 @media (max-width: 991.99px) {
     .promo {
-        &__wrapper {
-            width: 740px;
-            background-position: 92% 100%;
+        &__title {
+            font-size: 24px;
+            max-width: 483px;
         }
     }
 }
 
 @media (max-width: 767.99px) {
-    .promo {
-        &__wrapper {
-            width: 560px;
-            background: url('@/assets/img/promo_bg_mobile.png');
-        }
-        &__title {
-            font-size: 24px;
-            line-height: 1.49;
-        }
-    }
 }
 
 @media (max-width: 574.99px) {
     .promo {
-        &__wrapper {
-            width: 368px;
-            background: url('@/assets/img/promo_bg_mobile_small.png');
-        }
         &__title {
-            font: 700 22px / 1.63636 var(--font4);
-        }
-        &__button {
-            width: 347px;
-            font-size: 14px;
+            max-width: 327px;
         }
     }
 }
 
 @media (max-width: 399.99px) {
-    .promo {
-        &__wrapper {
-            width: 314px;
-            height: 320px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
-        &__title {
-            font-size: 20px;
-        }
-
-        &__button {
-            width: 294px;
-        }
-    }
-} */
+}
 </style>

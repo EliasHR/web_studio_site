@@ -34,6 +34,7 @@ export default {
         justify-content: center;
         border-radius: 8px;
         background: url('@/assets/img/instructions_bg.png') no-repeat;
+        background-size: 100% 100%;
         height: 292px;
     }
     &__title {
@@ -49,73 +50,34 @@ export default {
 }
 @media (max-width: 1399.99px) {
 }
-/* 
+
 @media (max-width: 1199.99px) {
-    .promo {
-        &__wrapper {
-            width: 960px;
-            background-position: 100% 100%;
-        }
-        &__title {
-            font-size: 28px;
-            line-height: 1.52;
-        }
-    }
 }
 
 @media (max-width: 991.99px) {
     .promo {
-        &__wrapper {
-            width: 740px;
-            background-position: 92% 100%;
+        &__title {
+            font-size: 24px;
         }
     }
 }
 
 @media (max-width: 767.99px) {
     .promo {
-        &__wrapper {
-            width: 560px;
-            background: url('@/assets/img/promo_bg_mobile.png');
-        }
         &__title {
-            font-size: 24px;
-            line-height: 1.49;
+            max-width: 327px;
         }
     }
 }
 
 @media (max-width: 574.99px) {
-    .promo {
-        &__wrapper {
-            width: 368px;
-            background: url('@/assets/img/promo_bg_mobile_small.png');
-        }
-        &__title {
-            font: 700 22px / 1.63636 var(--font4);
-        }
-        &__button {
-            width: 347px;
-            font-size: 14px;
-        }
-    }
 }
 
 @media (max-width: 399.99px) {
     .promo {
-        &__wrapper {
-            width: 314px;
-            height: 320px;
-            background-size: contain;
-            background-repeat: no-repeat;
-        }
         &__title {
-            font-size: 20px;
-        }
-
-        &__button {
-            width: 294px;
+            max-width: 260px;
         }
     }
-} */
+}
 </style>

@@ -7,19 +7,59 @@ class Project(models.Model):
     """Описание модели проектов"""
 
     cover = ProcessedImageField(
-        verbose_name="Обложка проекта",
+        verbose_name="Обложка проекта для экранов c шириной контента 1152px",
         upload_to="projects",
         blank=True,
     )
-    cover_desktop = ImageSpecField(
+    cover_webp = ImageSpecField(
         source="cover", processors=[ResizeToFit(None, 336)], format="WEBP", options={"quality": 100}
     )
-    """ srcset_tablet = ImageSpecField(
-        source="src", processors=[ResizeToFit(368, None)], format="WEBP", options={"quality": 100}
+
+    cover_960 = ProcessedImageField(
+        verbose_name="Обложка проекта для экранов c шириной контента 960px",
+        upload_to="projects",
+        blank=True,
     )
-    srcset_mobile = ImageSpecField(
-        source="src", processors=[ResizeToFit(314, None)], format="WEBP", options={"quality": 100}
-    ) """
+    cover_960_webp = ImageSpecField(
+        source="cover_960", processors=[ResizeToFit(None, 336)], format="WEBP", options={"quality": 100}
+    )
+
+    cover_740 = ProcessedImageField(
+        verbose_name="Обложка проекта для экранов c шириной контента 740px",
+        upload_to="projects",
+        blank=True,
+    )
+    cover_740_webp = ImageSpecField(
+        source="cover_740", processors=[ResizeToFit(None, 336)], format="WEBP", options={"quality": 100}
+    )
+
+    cover_560 = ProcessedImageField(
+        verbose_name="Обложка проекта для экранов c шириной контента 560px",
+        upload_to="projects",
+        blank=True,
+    )
+    cover_560_webp = ImageSpecField(
+        source="cover_560", processors=[ResizeToFit(None, 336)], format="WEBP", options={"quality": 100}
+    )
+
+    cover_380 = ProcessedImageField(
+        verbose_name="Обложка проекта для экранов c шириной контента 380px",
+        upload_to="projects",
+        blank=True,
+    )
+    cover_380_webp = ImageSpecField(
+        source="cover_380", processors=[ResizeToFit(None, 336)], format="WEBP", options={"quality": 100}
+    )
+
+    cover_314 = ProcessedImageField(
+        verbose_name="Обложка проекта для экранов c шириной контента 314px",
+        upload_to="projects",
+        blank=True,
+    )
+    cover_314_webp = ImageSpecField(
+        source="cover_314", processors=[ResizeToFit(None, 336)], format="WEBP", options={"quality": 100}
+    )
+
     cover_alt = models.CharField(max_length=500, verbose_name="Альтернативный текст обложки")
     title = models.CharField(max_length=500, verbose_name="Заголовок проекта")
     title_alt_color = models.BooleanField(default=False, verbose_name="Заголовок белого цвета")
@@ -29,3 +69,6 @@ class Project(models.Model):
     class Meta:
         verbose_name = "Проект"
         verbose_name_plural = "Проекты"
+
+    def __str__(self):
+        return self.title

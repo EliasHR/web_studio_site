@@ -33,10 +33,10 @@
                     >
                     <p class="swiper-slide__name">Татьяна Брусянцева, дизайнер</p> -->
                 </div>
-                <picture v-if="review.src">
-                    <source media="(min-width: 768px)" :srcset="review.srcset_desktop" />
+                <picture v-if="review.src" class="swiper-slide__image">
+                    <!-- <source media="(min-width: 768px)" :srcset="review.srcset_desktop" />
                     <source media="(min-width: 400px)" :srcset="review.srcset_tablet" />
-                    <source media="(max-width: 399.99px)" :srcset="review.srcset_mobile" />
+                    <source media="(max-width: 399.99px)" :srcset="review.srcset_mobile" /> -->
                     <img
                         loading="lazy"
                         :src="review.src"
@@ -45,6 +45,18 @@
                     />
                 </picture>
                 <picture class="swiper-slide__image" v-else>
+                    <source
+                        media="(max-width: 399.99px)"
+                        srcset="@/assets/img/reviews_comma_320.png"
+                    />
+                    <source
+                        media="(max-width: 991.99px)"
+                        srcset="@/assets/img/reviews_comma_740.png"
+                    />
+                    <source
+                        media="(max-width: 1199.99px)"
+                        srcset="@/assets/img/reviews_comma_960.png"
+                    />
                     <img
                         loading="lazy"
                         src="@/assets/img/reviews_comma.png"
@@ -110,29 +122,23 @@ export default {
             display: grid;
             gap: 66px;
             grid-template-columns: auto auto;
+            padding: 0 24px;
         }
         &__text {
-            font: italic 400 16px / 1.75 var(--font4);
-            color: var(--primary-white);
-            &-wrapper {
-                margin-top: 80px;
-                padding-left: 24px;
-            }
+            font: italic 400 16px / 1.75 var(--font5);
+        }
+        &__text-wrapper {
+            margin-top: 80px;
+            margin-bottom: 40px;
         }
         &__name {
-            font: 700 20px / 1.7 var(--font4);
-            color: var(--primary-colors-3b2406);
+            font: 700 18px / 1.66667 var(--font-family);
             text-align: right;
             //margin-bottom: 40px;
         }
         &__image {
-            //width: 515px;
-            //height: auto;
-            object-fit: contain;
-            //border-radius: 8px;
-            width: 568px;
+            width: auto;
             height: 350px;
-            background: var(--neutral---300);
         }
     }
     &-controlls {
@@ -140,7 +146,7 @@ export default {
         bottom: 0;
         left: 0;
         z-index: 10;
-        width: 490px;
+        width: 520px;
         display: flex;
         justify-content: space-between;
     }
@@ -180,96 +186,117 @@ export default {
         width: 960px;
         &-slide {
             &__wrapper {
-                gap: 28px;
+                //gap: 28px;
+                padding: 0;
             }
-            &__name {
-                margin: 10px 0;
+            &__image {
+                width: auto;
+                height: auto;
+                max-width: 378px;
+            }
+            &__text {
+                &-wrapper {
+                    margin-top: 80px;
+                    margin-bottom: 10px;
+                }
             }
         }
         &-controlls {
-            width: 412px;
+            width: 516px;
+        }
+        &-pagination-custom {
+            margin-left: 0px;
         }
     }
 }
 
 @media (max-width: 991.99px) {
     .swiper {
-        width: 515px;
-
+        width: 740px;
         &-slide {
             &__wrapper {
-                gap: 28px;
                 grid-template-columns: auto;
-                justify-content: space-between;
-                height: 750px;
+                grid-template-rows: 250px 300px;
+                justify-items: center;
+                //align-items: center;
+                padding: 0 24px;
             }
-            &__text {
-                &-wrapper {
-                    margin-top: 54px;
-                    height: 190px;
-                }
+            &__text-wrapper {
+                margin-top: 0px;
+                margin-bottom: 40px;
+            }
+            &__image {
+                align-self: center;
             }
         }
+
+        &-pagination-custom {
+            justify-content: center;
+        }
         &-controlls {
-            width: 515px;
-            bottom: 10px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: 70px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
         }
     }
 }
 
 @media (max-width: 767.99px) {
     .swiper {
-        width: 368px;
-
+        width: 560px;
         &-slide {
             &__wrapper {
-                gap: 28px;
-                grid-template-columns: auto;
-                justify-content: space-between;
-                height: 750px;
-            }
-            &__text {
-                &-wrapper {
-                    margin-top: 54px;
-                    height: 190px;
-                }
-            }
-            &__image {
-                width: 368px;
+                grid-template-rows: 300px 300px;
             }
         }
         &-controlls {
-            width: 368px;
-            bottom: 40px;
+            left: 50%;
+            top: 55%;
+            transform: translate(-50%, -50%);
         }
     }
 }
-/*
+
 @media (max-width: 574.99px) {
-
-} */
-@media (max-width: 399.99px) {
     .swiper {
-        width: 314px;
-
+        width: 380px;
         &-slide {
             &__wrapper {
-                height: 650px;
-                gap: 0;
-                display: block;
+                grid-template-rows: 430px 300px;
+                box-sizing: border-box;
+                padding: 0;
             }
-            &__text {
-                &-wrapper {
-                    height: 380px;
-                }
-            }
-            &__image {
-                width: 314px;
+            &__text-wrapper {
+                padding: 0 8px;
             }
         }
         &-controlls {
-            width: 314px;
-            bottom: 0px;
+            top: 60%;
+        }
+    }
+}
+@media (max-width: 399.99px) {
+    .swiper {
+        width: 314px;
+        &-slide {
+            &__wrapper {
+                grid-template-rows: 480px 300px;
+            }
+            &__text-wrapper {
+                padding: 0 4px;
+            }
+            &__image {
+                max-width: 314px;
+            }
+        }
+        &-controlls {
+            top: 65%;
         }
     }
 }
