@@ -6,13 +6,9 @@ WORKDIR /api
 COPY requirements.txt /api
 
 RUN pip install --upgrade pip
-#RUN pip install -r requirements.txt
-RUN ls -la /api
-
+RUN pip install -r requirements.txt
 COPY . /api
 
-# Выводим список файлов и папок после копирования всех файлов
-RUN ls -la /api
 # CMD ["gunicorn", "app", "--bind", "0.0.0.0:443", "--worker-class=gevent", "--workers=3"]
 #CMD ["gunicorn", "loft", "--bind", "0.0.0.0:443"]
 CMD ["gunicorn", "api.wsgi:application", "--bind", "0.0.0.0:80"]

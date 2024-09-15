@@ -1,0 +1,31 @@
+name: CI/CD Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Copy files via SCP
+        run: scp -r ./* user@remote_server:/path/to/project
+
+      - name: Rebuild and restart Docker containers
+        run: |
+          ssh user@remote_server << 'EOF'
+            cd /path/to/project
+            docker-compose down
+            docker-compose build
+            docker-compose up -d
+          EOF
