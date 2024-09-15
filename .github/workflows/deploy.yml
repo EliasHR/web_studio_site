@@ -20,7 +20,11 @@ jobs:
                   password: ${{ secrets.PASSWORD }}
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   #        port: ${{ secrets.PORT }}
-                  script: whoami
+                  script: |
+                      ls -al
+                      cd /home/web_studio_site
+                      git pull
+                      docker-compose up -d --build
 #    - name: Set up SSH
 #      uses: webfactory/ssh-agent@v0.5.3
 #      with:
