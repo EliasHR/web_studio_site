@@ -26,6 +26,5 @@ jobs:
         ssh user@remote_server << 'EOF'
           cd /path/to/project
           docker-compose down
-          docker-compose build
-          docker-compose up -d
+          docker-compose up -d --build
         EOF
