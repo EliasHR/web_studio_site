@@ -6,28 +6,44 @@ on:
             - master
 
 jobs:
-    deploy:
+    run_pull:
+        name: run pull
         runs-on: ubuntu-latest
 
         steps:
-            - name: Set up SSH
-              uses: webfactory/ssh-agent@v0.9.0
-              with:
-                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+            - name: install ssh keys
+              # check this thread to understand why its needed:
+              # https://stackoverflow.com/a/70447517
+              run: |
+                  install -m 600 -D /dev/null ~/.ssh/id_rsa
+                  echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+                  ssh-keyscan -H ${{ secrets.HOST }} > ~/.ssh/known_hosts
+            - name: connect and pull
+              run: ssh ${{ secrets.USERNAME }}@${{ secrets.HOST }} "cd /home/web-studio-site && git checkout master && git pull && exit"
+            - name: cleanup
+              run: rm -rf ~/.ssh
+#    deploy:
+#        runs-on: ubuntu-latest
 
-            - name: executing remote ssh commands using password
-              uses: appleboy/ssh-action@v1.0.3
-              with:
-                  host: ${{ secrets.HOST }}
-                  username: ${{ secrets.USERNAME }}
-                  password: ${{ secrets.PASSWORD }}
-                  key: ${{ secrets.SSH_PRIVATE_KEY }}
-                  #        port: ${{ secrets.PORT }}
-                  script: |
-                      cd /home/web_studio_site
-                      git pull origin main
-                      docker-compose down
-                      docker-compose up -d --build
+#        steps:
+#            - name: Set up SSH
+#              uses: webfactory/ssh-agent@v0.9.0
+#              with:
+#                  ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+#            - name: executing remote ssh commands using password
+#              uses: appleboy/ssh-action@v1.0.3
+#              with:
+#                  host: ${{ secrets.HOST }}
+#                  username: ${{ secrets.USERNAME }}
+#                  password: ${{ secrets.PASSWORD }}
+#                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+#                  #        port: ${{ secrets.PORT }}
+#                  script: |
+#                      cd /home/web_studio_site
+#                      git pull origin main
+#                      docker-compose down
+#                      docker-compose up -d --build
 
 #    - name: Set up SSH
 #      uses: webfactory/ssh-agent@v0.5.3
