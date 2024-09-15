@@ -69,6 +69,9 @@ export default {
         flex-direction: column;
         gap: 24px;
     }
+    &__content-menu {
+        margin-right: 60px;
+    }
     &__content-social {
         display: flex;
         gap: 12px;

@@ -1,10 +1,10 @@
 <template>
     <div class="social">
         <a href="#" class="social__link">
-            <fixed-whats-app />
+            <fixed-whats-app class="social__wa" />
         </a>
         <a href="#" class="social__link">
-            <fixed-telegram />
+            <fixed-telegram class="social__tg" />
         </a>
     </div>
 </template>
@@ -30,17 +30,29 @@ export default {
     flex-direction: column;
     gap: 5px;
     z-index: 15;
+}
 
-    /*     &__img {
-        width: 56px;
-        height: 56px;
-        border-radius: 17px;
-        z-index: 10;
+@media (max-width: 1199.99px) {
+}
+
+@media (max-width: 991.99px) {
+}
+
+@media (max-width: 767.99px) {
+}
+
+@media (max-width: 574.99px) {
+    .social {
+        width: 48px;
+        height: 101px;
+        &__tg,
+        &__wa {
+            width: 48px;
+            height: 48px;
+        }
     }
+}
 
-    &__link {
-        width: 56px;
-        height: 56px;
-    } */
+@media (max-width: 399.99px) {
 }
 </style>
