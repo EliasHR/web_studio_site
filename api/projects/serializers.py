@@ -38,3 +38,4 @@ class ProjectSerializer(serializers.HyperlinkedModelSerializer):
 
     def to_representation(self, instance):
         return super().to_representation(instance)
+
