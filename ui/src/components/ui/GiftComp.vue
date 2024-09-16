@@ -1,6 +1,6 @@
 <template>
     <div class="gift">
-        <img class="gift__pdf" src="@/assets/img/pdf.png" width="40px" height="40px"/>
+        <img class="gift__pdf" src="@/assets/img/pdf.png" width="40px" height="40px" />
         <!-- <img class="gift__pdf" src="@/assets/img/pdf_x2.png" width="40px" height="40px"/> -->
         <!-- <img class="gift__pdf" src="@/assets/img/pdf_x4.png" width="40px" height="40px"/> -->
         <!-- <img class="gift__pdf" src="@/assets/img/pdf.svg" width="40px" height="40px"/> -->

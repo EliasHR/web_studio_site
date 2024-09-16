@@ -1,8 +1,7 @@
 <template>
     <div class="logo">
         <a class="logo__link" href="/">
-            <logo-icon class="logo__icon" />
-            <div class="logo__text">веб-разработка и программы</div>
+            <logo-icon class="logo__icon" width="161px" height="50px" />
         </a>
     </div>
 </template>
@@ -19,12 +18,10 @@ export default {
 
 <style lang="scss" scoped>
 .logo {
-    &__text {
-        font: 400 11px / 0.42857 var(--font-family);
-        color: var(--primary-chernyy);
-    }
     &__link {
-        @include reset-link;
+        width: 161px;
+        height: 50px;
+        display: block;
     }
 }
 @media (max-width: 1199.99px) {
@@ -32,12 +29,10 @@ export default {
 
 @media (max-width: 991.99px) {
     .logo {
-        &__icon {
-            width: 115px;
-            height: 25px;
-        }
-        &__text {
-            font-size: 8px;
+        &__icon,
+        &__link {
+            width: 120px;
+            height: 38px;
         }
     }
 }
@@ -47,17 +42,10 @@ export default {
 
 @media (max-width: 574.99px) {
     .logo {
-        &__icon {
-            width: 84px;
-            height: 18px;
-        }
-        &__text {
-            font-size: 6px;
-        }
+        &__icon,
         &__link {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
+            width: 84px;
+            height: 28px;
         }
     }
 }
