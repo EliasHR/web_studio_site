@@ -6,7 +6,7 @@ from imagekit.processors import ResizeToFit
 class Review(models.Model):
     """Описание модели галереи"""
 
-    src = ProcessedImageField(
+    """ src = ProcessedImageField(
         verbose_name="Фотография для галереи",
         upload_to="reviews",
         blank=True,
@@ -19,15 +19,16 @@ class Review(models.Model):
     )
     srcset_mobile = ImageSpecField(
         source="src", processors=[ResizeToFit(314, None)], format="WEBP", options={"quality": 100}
-    )
+    ) 
+    alt = models.CharField(max_length=255, verbose_name="Альтернативный текст", blank=True)"""
+
     video_file = models.FileField(
-        verbose_name="Видео-отзыв",
+        verbose_name="Видео-отзыв, в формате mp4",
         upload_to="videoreviews",
         blank=True,
         null=True,
     )
-    alt = models.CharField(max_length=255, verbose_name="Альтернативный текст", blank=True)
-    text = models.TextField(max_length=500, verbose_name="Текст отзыва")
+    text = models.TextField(max_length=500, verbose_name="Текст отзыва", blank=True, null=True)
     name = models.CharField(max_length=100, verbose_name="Имя клиента")
 
     class Meta:

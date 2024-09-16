@@ -3,7 +3,7 @@ from .models import Review
 
 
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ["name", "text", "src"]
+    list_display = ["name", "text"]
 
 
 # Register your modem e.

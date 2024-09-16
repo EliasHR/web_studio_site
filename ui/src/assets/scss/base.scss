@@ -10,6 +10,7 @@ body {
 
 /* body * {
     border: 1px solid red;
+    box-sizing: border-box;
 } */
 
 html {
@@ -22,6 +23,8 @@ html {
     max-width: 1152px;
     margin: 0 auto;
     box-sizing: border-box;
+    /* border: 1px solid red;
+    box-sizing: border-box; */
 }
 
 @media (max-width: 1399.99px) {

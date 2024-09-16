@@ -2,7 +2,6 @@
     <div class="logo">
         <a class="logo__link" href="/">
             <logo-mobile-icon class="logo__icon" />
-            <div class="logo__text">веб-разработка и программы</div>
         </a>
     </div>
 </template>
@@ -19,16 +18,11 @@ export default {
 
 <style lang="scss" scoped>
 .logo {
-    &__text {
-        font: 400 7px / 0.42857 var(--font-family);
-        color: var(--primary-white);
-    }
-    &__link {
-        @include reset-link;
-    }
+    &__link,
     &__icon {
-        width: 102px;
-        height: 20px;
+        width: 93px;
+        height: 29px;
+        display: block;
     }
 }
 @media (max-width: 1199.99px) {

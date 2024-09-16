@@ -2,37 +2,53 @@
     <section class="reviews" id="reviews">
         <div class="container">
             <div class="reviews__wrapper">
-                <h2-custom class="reviews__title">Отзывы наших клиентов</h2-custom>
                 <swiper-comp />
+                <picture class="swiper-slide__image">
+                    <source
+                        media="(max-width: 399.99px)"
+                        srcset="@/assets/img/reviews_comma_320.png"
+                    />
+                    <source
+                        media="(max-width: 991.99px)"
+                        srcset="@/assets/img/reviews_comma_740.png"
+                    />
+                    <source
+                        media="(max-width: 1199.99px)"
+                        srcset="@/assets/img/reviews_comma_960.png"
+                    />
+                    <img
+                        loading="lazy"
+                        src="@/assets/img/reviews_comma.png"
+                        alt="Большая кавычка"
+                        class="reviews__image"
+                    />
+                </picture>
             </div>
         </div>
     </section>
 </template>
 
 <script>
-import H2Custom from '@/components/ui/typographics/H2Custom.vue'
 import SwiperComp from '@/components/ui/swiper/SwiperComp.vue'
 
 export default {
     name: 'reviews-comp',
     components: {
-        H2Custom,
         SwiperComp
     }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .reviews {
     scroll-margin-top: 96px;
     &__wrapper {
-        position: relative;
+        display: grid;
+        gap: 50px;
+        grid-template-columns: auto auto;
     }
     &__title {
-        position: absolute;
-        left: 24px;
-        top: 0;
-        z-index: 10;
+        margin-bottom: 24px;
     }
 }
 @media (max-width: 1399.99px) {
@@ -40,8 +56,13 @@ export default {
 
 @media (max-width: 1199.99px) {
     .reviews {
-        &__title {
-            left: 0;
+        &__wrapper {
+            gap: 25px;
+        }
+        &__image {
+            width: auto;
+            height: auto;
+            max-width: 378px;
         }
     }
 }
@@ -50,9 +71,12 @@ export default {
     .reviews {
         scroll-margin-top: 64px;
         &__title {
-            position: static;
             text-align: center;
             margin-bottom: 24px;
+        }
+        &__wrapper {
+            grid-template-columns: auto;
+            justify-items: center;
         }
     }
 }
@@ -64,5 +88,10 @@ export default {
 }
 
 @media (max-width: 399.99px) {
+    .reviews {
+        &__image {
+            max-width: 314px;
+        }
+    }
 }
 </style>

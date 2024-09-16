@@ -46,7 +46,7 @@ export default {
         justify-content: center;
         align-items: center;
         gap: 100px;
-        //width: 1152px;
+
         box-sizing: border-box;
         min-height: 502px;
         padding: 15px 68px;
@@ -55,7 +55,6 @@ export default {
         background-size: 100% 100%;
     }
     &__content {
-        width: 347px;
         display: flex;
         flex-direction: column;
         align-items: center;

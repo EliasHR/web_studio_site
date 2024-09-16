@@ -60,11 +60,25 @@
 import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
 import GiftComp from '@/components/ui/GiftComp.vue'
 
+import top__illustration from '@/assets/img/top_illustration.png'
+
 export default {
     name: 'top-comp',
     components: {
         ButtonMiddle,
         GiftComp
+    },
+    head() {
+        return {
+            link: [
+                {
+                    rel: 'preload',
+                    fetchpriority: 'high',
+                    as: 'image',
+                    href: top__illustration
+                }
+            ]
+        }
     }
 }
 </script>
@@ -78,7 +92,7 @@ export default {
         background: var(--primary-seryy);
         border-radius: 8px;
         min-height: 449px;
-        padding: 24px 24px 38px 24px;
+        padding: 44px 24px 61px 24px;
         box-sizing: border-box;
         display: flex;
         align-items: end;
@@ -181,11 +195,14 @@ export default {
 
 @media (max-width: 991.99px) {
     .top {
-        margin-bottom: 24px;
+        margin-bottom: 78px;
         margin-top: 64px;
+
         &__wrapper {
             min-height: 336px;
             position: relative;
+            padding-top: 57px;
+            padding-bottom: 64px;
         }
         &__title {
             font: 700 32px / 1.21875 var(--font11);
@@ -220,7 +237,8 @@ export default {
             align-items: center;
             justify-content: end;
             margin-bottom: 24px;
-            padding: 24px;
+            padding-top: 48px;
+            padding-bottom: 27px;
             gap: 16px;
         }
         &__title {
@@ -257,7 +275,8 @@ export default {
 @media (max-width: 574.99px) {
     .top {
         &__wrapper {
-            padding: 16px;
+            padding-left: 16px;
+            padding-right: 16px;
         }
         &__info {
             gap: 16px;
@@ -271,7 +290,6 @@ export default {
 @media (max-width: 399.99px) {
     .top {
         &__wrapper {
-            // padding: 16px;
             padding-bottom: 0;
         }
         &__info {
