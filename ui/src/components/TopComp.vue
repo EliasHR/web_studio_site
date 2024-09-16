@@ -77,7 +77,7 @@ export default {
     &__wrapper {
         background: var(--primary-seryy);
         border-radius: 8px;
-        height: 449px;
+        min-height: 449px;
         padding: 24px 24px 38px 24px;
         box-sizing: border-box;
         display: flex;
@@ -184,7 +184,7 @@ export default {
         margin-bottom: 24px;
         margin-top: 64px;
         &__wrapper {
-            height: 336px;
+            min-height: 336px;
             position: relative;
         }
         &__title {
@@ -215,7 +215,7 @@ export default {
 @media (max-width: 767.99px) {
     .top {
         &__wrapper {
-            height: 558px;
+            min-height: 558px;
             flex-direction: column;
             align-items: center;
             justify-content: end;
