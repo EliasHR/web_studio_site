@@ -244,6 +244,14 @@ export default {
 }
 
 @media (max-width: 574.99px) {
+    .projects {
+        &__item:nth-child(2) {
+            order: 5;
+        }
+        & .projects__item:last-child {
+            order: 6;
+        }
+    }
 }
 
 @media (max-width: 399.99px) {

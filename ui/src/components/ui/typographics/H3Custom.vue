@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
 .h3 {
-    font: 700 24px / 1.58333 var(--font11);
+    font: 700 24px / 1.58333 var(--font-family);
     text-align: center;
     background: linear-gradient(95deg, #badcff 0%, rgba(255, 255, 255, 0.96) 42%, #badcff 100%);
     background-clip: text;

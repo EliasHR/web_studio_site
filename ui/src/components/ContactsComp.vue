@@ -55,11 +55,13 @@ export default {
         background-size: 100% 100%;
     }
     &__content {
+        width: 347px;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: start;
         gap: 24px;
+        //border: 1px solid red;
     }
     &__phone {
         font: 700 24px / 1.5 var(--font-family);
