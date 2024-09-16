@@ -24,6 +24,8 @@ SECRET_KEY = "django-insecure-twi^6!##da1-4w)r(wo)zsboyctty)r0_oo@g^3jqm_#7w2bnh
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+SECURE_SSL_REDIRECT = False
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 ALLOWED_HOSTS = [
     # "famtreepicture.ru",
@@ -33,6 +35,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
 ]
+
 
 CORS_ALLOWED_ORIGINS = [
     "http://*.127.0.0.1:8000",
