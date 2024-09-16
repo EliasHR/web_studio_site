@@ -19,6 +19,7 @@ jobs:
                   host: ${{ secrets.HOST }}
                   username: ${{ secrets.USERNAME }}
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
+				  password: ${{ secrets.PASSWORD }}
                   script: |
                       cd /home/web_studio_site
                       git remote set-url origin git@github.com:EliasHR/web_studio_site.git
