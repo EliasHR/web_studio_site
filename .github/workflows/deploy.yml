@@ -22,11 +22,12 @@ jobs:
                   password: ${{ secrets.PASSWORD }}
                   script: |
                       cd /home/web_studio_site
+                      git remote set-url origin git@github.com:EliasHR/web_studio_site.git
                       git pull
                       docker-compose down
                       docker-compose build
                       docker-compose up -d
 
-#                      git remote set-url origin git@github.com:EliasHR/web_studio_site.git
+#                      g
 #                     git checkout master
 #                     git pull origin master
