@@ -23,7 +23,7 @@ export default {
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
-    min-height: 150px;
+    min-height: 184px;
     gap: 24px;
     position: fixed;
     right: 2%;
@@ -41,6 +41,9 @@ export default {
 }
 
 @media (max-width: 574.99px) {
+    .floating-buttons {
+        min-height: 150px;
+    }
 }
 
 @media (max-width: 399.99px) {
