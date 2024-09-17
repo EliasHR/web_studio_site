@@ -96,6 +96,7 @@ export default {
         position: relative;
         padding: 20px 85px;
         box-sizing: border-box;
+        overflow: scroll;
     }
     &__wrapper {
         display: flex;
@@ -157,6 +158,7 @@ export default {
     .dialog-form {
         &__container {
             width: 656px;
+            max-height: 90vh;
         }
         &__illustration {
             display: none;
@@ -176,10 +178,9 @@ export default {
     .dialog-form {
         &__container {
             width: 90vw;
+            max-height: 90vh;
+            min-height: 500px;
             padding: 15px;
-        }
-        &__success {
-            width: 80vw;
         }
     }
 }
