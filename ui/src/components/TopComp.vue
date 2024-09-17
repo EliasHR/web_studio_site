@@ -16,10 +16,14 @@
                         </div>
                     </div>
                     <div class="top__actions">
-                        <button-middle class="top__calculate"
+                        <button-middle class="top__calculate" @click="showDialog = true"
                             >Рассчитать стоимость проекта</button-middle
                         >
-                        <button-middle class="top__tg-link">Написать в телеграм</button-middle>
+                        <a class="top__link" href="https://t.me/code_mode7" target="_blank">
+                            <button-middle class="top__tg-link"
+                                >Написать в телеграм</button-middle
+                            ></a
+                        >
                     </div>
                 </div>
                 <picture>
@@ -54,11 +58,15 @@
             </div>
         </div>
     </section>
+    <dialog-form v-if="showDialog" @close="showDialog = false" :type="'cost'" :blackText="true">
+        Рассчитать стоимость проекта
+    </dialog-form>
 </template>
 
 <script>
 import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
 import GiftComp from '@/components/ui/GiftComp.vue'
+import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
 import top__illustration from '@/assets/img/top_illustration.png'
 
@@ -66,7 +74,13 @@ export default {
     name: 'top-comp',
     components: {
         ButtonMiddle,
-        GiftComp
+        GiftComp,
+        DialogForm
+    },
+    data() {
+        return {
+            showDialog: false
+        }
     },
     head() {
         return {
@@ -145,6 +159,9 @@ export default {
             background: none;
             text-decoration: underline;
         }
+    }
+    &__link {
+        @include reset-link;
     }
     &__bottom-section {
         display: flex;

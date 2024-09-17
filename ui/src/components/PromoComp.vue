@@ -5,21 +5,32 @@
                 <h2 class="promo__title">
                     Обычно к нам обращаются, когда нужно: разработать телеграм бота или создать сайт
                 </h2>
-                <a href="#">
-                    <button-middle class="promo__button">Обратиться</button-middle>
-                </a>
+
+                <button-middle class="promo__button" @click="showDialog = true">
+                    Обратиться
+                </button-middle>
             </div>
         </div>
     </section>
+    <dialog-form v-if="showDialog" @close="showDialog = false" :type="'app'" :blackText="true">
+        Отправить
+    </dialog-form>
 </template>
 
 <script>
 import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
+import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
 export default {
     name: 'promo-comp',
     components: {
-        ButtonMiddle
+        ButtonMiddle,
+        DialogForm
+    },
+    data() {
+        return {
+            showDialog: false
+        }
     }
 }
 </script>

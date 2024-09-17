@@ -20,7 +20,12 @@
                                 </p-super-small>
                             </div>
                         </div>
-                        <button-small class="services__item-button">Оставить заявку</button-small>
+                        <button-small
+                            class="services__item-button"
+                            @click="(showDialog = true), (appType = 'app_site')"
+                        >
+                            Оставить заявку
+                        </button-small>
                     </div>
                 </div>
                 <div class="services__item">
@@ -35,7 +40,12 @@
                                 <p-super-small>Интеграция с различными сервисами</p-super-small>
                             </div>
                         </div>
-                        <button-small class="services__item-button">Оставить заявку</button-small>
+                        <button-small
+                            class="services__item-button"
+                            @click="(showDialog = true), (appType = 'app_bot')"
+                        >
+                            Оставить заявку
+                        </button-small>
                     </div>
                 </div>
                 <div class="services__item">
@@ -52,12 +62,20 @@
                                 <p-super-small>Создание логотипа и фирменного стиля</p-super-small>
                             </div>
                         </div>
-                        <button-small class="services__item-button">Оставить заявку</button-small>
+                        <button-small
+                            class="services__item-button"
+                            @click="(showDialog = true), (appType = 'app_design')"
+                        >
+                            Оставить заявку
+                        </button-small>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <dialog-form v-if="showDialog" @close="showDialog = false" :type="appType" :blackText="true">
+        Отправить
+    </dialog-form>
 </template>
 
 <script>
@@ -65,13 +83,21 @@ import H2Custom from '@/components/ui/typographics/H2Custom.vue'
 import H3Custom from '@/components/ui/typographics/H3Custom.vue'
 import PSuperSmall from '@/components/ui/typographics/PSuperSmall.vue'
 import ButtonSmall from '@/components/ui/buttons/ButtonSmall.vue'
+import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
 export default {
     components: {
         H2Custom,
         H3Custom,
         PSuperSmall,
-        ButtonSmall
+        ButtonSmall,
+        DialogForm
+    },
+    data() {
+        return {
+            appType: 'app_site',
+            showDialog: false
+        }
     }
 }
 </script>

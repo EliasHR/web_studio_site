@@ -6,17 +6,22 @@
                 <div class="header__menu">
                     <div class="header__contact">
                         <contact-nav-bar />
-                        <button-small>Обратный звонок</button-small>
+                        <button-small @click="showDialog = true">Обратный звонок</button-small>
                     </div>
                     <div class="header__nav">
                         <main-nav-bar />
                     </div>
                 </div>
-                <button-middle class="header__button-mobile">Обратный звонок</button-middle>
+                <button-middle class="header__button-mobile" @click="showDialog = true">
+                    Обратный звонок
+                </button-middle>
                 <hamburger-menu class="header__hamburger" />
             </div>
         </div>
     </header>
+    <dialog-form v-if="showDialog" @close="showDialog = false" :type="'ring'" :blackText="true">
+        Заказать обратный звонок
+    </dialog-form>
 </template>
 
 <script>
@@ -26,6 +31,7 @@ import LogoComp from '@/components/ui/LogoComp.vue'
 import ContactNavBar from '@/components/ui/navbar/ContactNavBar.vue'
 import MainNavBar from '@/components/ui/navbar/MainNavBar.vue'
 import HamburgerMenu from '@/components/ui/navbar/HamburgerMenu.vue'
+import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
 export default {
     name: 'header-comp',
@@ -35,7 +41,13 @@ export default {
         ButtonSmall,
         ButtonMiddle,
         ContactNavBar,
-        HamburgerMenu
+        HamburgerMenu,
+        DialogForm
+    },
+    data() {
+        return {
+            showDialog: false
+        }
     }
 }
 </script>

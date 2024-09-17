@@ -6,7 +6,7 @@
                     Инструкция<br />
                     «Как оптимизировать сайт: 10 шагов»
                 </h2>
-                <a href="#">
+                <a href="Инструкция по оптимизации сайта, 10 шагов.pdf">
                     <button-middle class="promo__button">Скачать</button-middle>
                 </a>
             </div>

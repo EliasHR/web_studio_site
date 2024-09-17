@@ -56,31 +56,37 @@
                             width="213px"
                             height="236px"
                         />
-                        <a
-                            href="#"
+                        <button
                             class="projects__request-button projects__link projects__item-title_white"
+                            @click="showDialog = true"
                         >
                             Оставить заявку
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <dialog-form v-if="showDialog" @close="showDialog = false" :type="'app'" :blackText="true">
+        Отправить
+    </dialog-form>
 </template>
 
 <script>
 import H2Custom from '@/components/ui/typographics/H2Custom.vue'
 import { useProjectStore } from '@/stores/projects'
+import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
 export default {
     name: 'projects-comp',
     components: {
-        H2Custom
+        H2Custom,
+        DialogForm
     },
     data() {
         return {
-            currentBreakpoint: ''
+            currentBreakpoint: '',
+            showDialog: false
         }
     },
     setup() {
@@ -202,6 +208,7 @@ export default {
         color: var(--primary-white);
         margin-bottom: 18px;
         margin-right: 18px;
+        @include reset-button;
     }
 }
 

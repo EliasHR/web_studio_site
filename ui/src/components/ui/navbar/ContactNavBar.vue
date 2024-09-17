@@ -1,11 +1,13 @@
 <template>
     <nav class="contact-nav-bar">
         <div class="contact-nav-bar__social">
-            <nav-item href="#"><header-whats-app /></nav-item>
-            <nav-item href="#"><header-telegram /></nav-item>
+            <nav-item href="https://wa.me/37491368838" target="_blank"
+                ><header-whats-app
+            /></nav-item>
+            <nav-item href="https://t.me/code_mode7" target="_blank"><header-telegram /></nav-item>
         </div>
-        <nav-item href="#">info@codemode.net</nav-item>
-        <nav-item href="#">+374 91 36 88 38</nav-item>
+        <nav-item href="mailto:info@codemode.net">info@codemode.net</nav-item>
+        <nav-item href="tel:+37491368838">+374 91 36 88 38</nav-item>
     </nav>
 </template>
 

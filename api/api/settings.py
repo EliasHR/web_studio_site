@@ -28,14 +28,12 @@ SECURE_SSL_REDIRECT = False
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 ALLOWED_HOSTS = [
-    # "famtreepicture.ru",
-    # "www.famtreepicture.ru",
-    # "family-tree-api",
-    "3060569-jj00779.twc1.net",
+    "mycodemode.ru",
     "localhost",
     "127.0.0.1",
 ]
-
+TG_BOT_TOKEN = "7218666730:AAFy1AAWh6uFa8v3_kVRGa04EtXHOjGjF3I"
+CHAT_ID = "-4569301004"
 
 CORS_ALLOWED_ORIGINS = [
     "http://*.127.0.0.1:8000",
@@ -44,7 +42,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://*.127.0.0.1:5173",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://3060569-jj00779.twc1.net",
+    "https://mycodemode.ru",
 ]
 
 # Application definition
@@ -61,6 +59,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "reviews",
     "projects",
+    "applications",
 ]
 
 MIDDLEWARE = [

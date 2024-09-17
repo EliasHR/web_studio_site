@@ -61,10 +61,18 @@
                         </ul>
 
                         <div class="sidemenu__social">
-                            <nav-item href="#" @click="navOpen = !navOpen">
+                            <nav-item
+                                href="https://wa.me/37491368838"
+                                target="_blank"
+                                @click="navOpen = !navOpen"
+                            >
                                 <hamburger-whatsapp />
                             </nav-item>
-                            <nav-item href="#" @click="navOpen = !navOpen">
+                            <nav-item
+                                href="https://t.me/code_mode7"
+                                target="_blank"
+                                @click="navOpen = !navOpen"
+                            >
                                 <hamburger-telegram />
                             </nav-item>
                         </div>

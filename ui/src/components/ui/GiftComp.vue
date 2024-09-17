@@ -8,7 +8,9 @@
         <div class="gift__wrapper">
             <div class="gift__text">
                 <div>Скачать бесплатно</div>
-                <div><a class="gift__link" href="">Оптимизация сайта.pdf</a></div>
+                <div>
+                    <a class="gift__link" href="Оптимизация сайта.pdf">Оптимизация сайта.pdf</a>
+                </div>
             </div>
             <gift-download class="geft__download" />
         </div>

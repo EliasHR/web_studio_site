@@ -27,6 +27,7 @@ urlpatterns = [
             [
                 path("", include("reviews.urls")),
                 path("", include("projects.urls")),
+                path("", include("applications.urls")),
             ]
         ),
     ),

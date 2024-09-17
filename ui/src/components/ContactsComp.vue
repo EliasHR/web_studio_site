@@ -3,7 +3,7 @@
         <div class="container">
             <h2-custom class="contacts__title">Контакты</h2-custom>
             <div class="contacts__wrapper">
-                <form-contacts />
+                <form-comp :type="ring">Заказать обратный звонок</form-comp>
 
                 <div class="contacts__content">
                     <a href="tel:+37491368838">
@@ -21,14 +21,14 @@
 
 <script>
 import H2Custom from '@/components/ui/typographics/H2Custom.vue'
-import FormContacts from '@/components/ui/form/FormContacts.vue'
+import FormComp from '@/components/ui/form/FormComp.vue'
 import PSmall from '@/components/ui/typographics/PSmall.vue'
 
 export default {
     name: 'contacts-comp',
     components: {
         H2Custom,
-        FormContacts,
+        FormComp,
         PSmall
     }
 }

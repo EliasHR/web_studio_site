@@ -6,21 +6,31 @@
                     Напишите о ваших проблемах в бизнесе –<br />
                     мы предложим решение
                 </h2>
-                <a href="#">
-                    <button-middle class="promo__button">Написать</button-middle>
-                </a>
+                <button-middle class="promo__button" @click="showDialog = true"
+                    >Написать</button-middle
+                >
             </div>
         </div>
     </section>
+    <dialog-form v-if="showDialog" @close="showDialog = false" :type="'business'" :blackText="true">
+        Отправить
+    </dialog-form>
 </template>
 
 <script>
 import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
+import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
 export default {
     name: 'promo-comp',
     components: {
-        ButtonMiddle
+        ButtonMiddle,
+        DialogForm
+    },
+    data() {
+        return {
+            showDialog: false
+        }
     }
 }
 </script>
