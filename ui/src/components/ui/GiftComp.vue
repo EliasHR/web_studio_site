@@ -14,7 +14,7 @@
                     >
                 </div>
             </div>
-            <a class="gift__link" href="Оптимизация сайта.pdf"
+            <a class="gift__link" href="Оптимизация сайта.pdf" download
                 ><gift-download class="geft__download"
             /></a>
         </div>
