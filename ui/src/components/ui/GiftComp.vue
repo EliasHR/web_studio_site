@@ -9,10 +9,14 @@
             <div class="gift__text">
                 <div>Скачать бесплатно</div>
                 <div>
-                    <a class="gift__link" href="Оптимизация сайта.pdf">Оптимизация сайта.pdf</a>
+                    <a class="gift__link" href="Оптимизация сайта.pdf" download
+                        >Оптимизация сайта.pdf</a
+                    >
                 </div>
             </div>
-            <a class="gift__link" href="Оптимизация сайта.pdf"><gift-download class="geft__download" /></a>
+            <a class="gift__link" href="Оптимизация сайта.pdf"
+                ><gift-download class="geft__download"
+            /></a>
         </div>
     </div>
 </template>

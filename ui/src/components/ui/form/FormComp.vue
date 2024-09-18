@@ -59,7 +59,7 @@
         </button-middle>
         <p-super-small class="form__policy">
             Нажимая на кнопку, вы соглашаетесь с
-            <a class="form__link" href="Политика конфиденциальности Code mode.pdf" target="_blank"
+            <a class="form__link" href="Политика конфиденциальности Code mode.pdf" download
                 >политикой конфиденциальности</a
             >
         </p-super-small>
