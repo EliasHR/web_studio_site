@@ -201,11 +201,16 @@ export default {
         overflow-x: hidden; /* Скрыть горизонтальную полосу прокрутки */
         text-align: center;
         box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
     }
     &__presentation-image {
         width: auto;
         max-width: 100%;
         box-sizing: border-box;
+        flex-shrink: 0;
+        flex-grow: 0;
+        align-self: center;
     }
     &__info {
         padding: 40px 21px;
