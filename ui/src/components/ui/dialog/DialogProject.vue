@@ -177,7 +177,7 @@ export default {
         border: 2px solid #111827;
         border-radius: 20px;
         width: 1152px;
-        height: 95vh;
+        height: 90vh;
         background: var(--primary-white);
         overflow: hidden;
         display: grid;
