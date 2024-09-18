@@ -24,8 +24,10 @@
                                 Особенности реализации проекта
                             </h3>
                             <a
+                                v-if="projectsStore.project.project_link"
                                 :href="projectsStore.project.project_link"
                                 class="dialog-project__info-link"
+                                target="_blank"
                             >
                                 {{ projectsStore.project.project_link }}
                             </a>
