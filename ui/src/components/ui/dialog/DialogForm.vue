@@ -96,13 +96,16 @@ export default {
         position: relative;
         padding: 20px 85px;
         box-sizing: border-box;
-        overflow: scroll;
+        overflow: hidden;
     }
     &__wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 46px; /* 
+        gap: 46px;
+
+        /* 
+        
         width: 100%;
         padding: 24px;
         box-sizing: border-box; */

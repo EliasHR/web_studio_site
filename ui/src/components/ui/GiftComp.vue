@@ -12,18 +12,17 @@
                     <a class="gift__link" href="Оптимизация сайта.pdf">Оптимизация сайта.pdf</a>
                 </div>
             </div>
-            <gift-download class="geft__download" />
+            <a class="gift__link" href="Оптимизация сайта.pdf"><gift-download class="geft__download" /></a>
         </div>
     </div>
 </template>
 
 <script>
 import GiftDownload from '@/components/ui/icons/GiftDownload.vue'
-import PSmall from '@/components/ui/typographics/PSmall.vue'
 
 export default {
     name: 'gift-comp',
-    components: { GiftDownload, PSmall }
+    components: { GiftDownload }
 }
 </script>
 
