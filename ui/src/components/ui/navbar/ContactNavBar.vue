@@ -6,7 +6,7 @@
             /></nav-item>
             <nav-item href="https://t.me/code_mode7" target="_blank"><header-telegram /></nav-item>
         </div>
-        <nav-item href="mailto:info@codemode.net">info@codemode.net</nav-item>
+        <nav-item href="mailto:info@mycodemode.ru">info@mycodemode.ru</nav-item>
         <nav-item href="tel:+37491368838">+374 91 36 88 38</nav-item>
     </nav>
 </template>

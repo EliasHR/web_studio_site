@@ -10,8 +10,8 @@
                         <p-small class="contacts__phone">+374 91 36 88 38</p-small>
                     </a>
                     <p-small>Армения, Ереван</p-small>
-                    <a href="mailto:info@codemode.net">
-                        <p-small class="contacts__email">info@codemode.net</p-small>
+                    <a href="mailto:info@mycodemode.ru">
+                        <p-small class="contacts__email">info@mycodemode.ru</p-small>
                     </a>
                 </div>
             </div>

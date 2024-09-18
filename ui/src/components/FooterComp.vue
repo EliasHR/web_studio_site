@@ -6,16 +6,16 @@
                 <div class="footer__content">
                     <div class="footer__content-contacts">
                         <p-small>Армения, Ереван</p-small>
-                        <a href="mailto:info@codemode.net" class="footer__link"
-                            ><p-small>info@codemode.net</p-small></a
+                        <a href="mailto:info@mycodemode.ru" class="footer__link"
+                            ><p-small>info@mycodemode.ru</p-small></a
                         >
                         <div class="footer__content-social">
-                            <a href="https://wa.me/37491368838" target="_blank"
-                                ><footer-whats-app
-                            /></a>
-                            <a href="https://t.me/code_mode7" target="_blank"
-                                ><footer-telegram
-                            /></a>
+                            <a href="https://wa.me/37491368838" target="_blank">
+                                <footer-whats-app />
+                            </a>
+                            <a href="https://t.me/code_mode7" target="_blank">
+                                <footer-telegram />
+                            </a>
                         </div>
                     </div>
                     <div class="footer__content-menu">

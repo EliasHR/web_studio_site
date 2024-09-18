@@ -47,12 +47,14 @@ class Project(models.Model):
         blank=True,
     )
     cover_314_webp = ImageSpecField(source="cover_314", format="WEBP", options={"quality": 100})
-
     cover_alt = models.CharField(max_length=500, verbose_name="Альтернативный текст обложки")
+
     title = models.CharField(max_length=500, verbose_name="Заголовок проекта")
     title_alt_color = models.BooleanField(default=False, verbose_name="Заголовок белого цвета")
-    # title = models.TextField(max_length=500, verbose_name="Текст отзыва")
     order = models.PositiveIntegerField(default=0, verbose_name="Порядок")
+
+    enable_detail = models.BooleanField(default=False, verbose_name="Включить детальное описание проекта")
+    project_link = models.URLField(verbose_name="Ссылка на проект", blank=True)
 
     class Meta:
         verbose_name = "Проект"
@@ -60,3 +62,37 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Feature(models.Model):
+    """Описание модели особенностей проектов"""
+
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="features", verbose_name="Проект")
+    title = models.CharField(max_length=1000, verbose_name="Особенность проекта")
+
+    class Meta:
+        verbose_name = "Особенность проекта"
+        verbose_name_plural = "Особенности проекта"
+
+    def __str__(self):
+        return self.title
+
+
+class Presentation(models.Model):
+    """Описание модели презентаций проектов"""
+
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="images", verbose_name="Проект")
+    image = ProcessedImageField(
+        verbose_name="Презентация проекта",
+        upload_to="presentations",
+        blank=True,
+    )
+    image_webp = ImageSpecField(source="image", format="WEBP", options={"quality": 100})
+    alt = models.CharField(max_length=500, verbose_name="Альтернативный текст изображения")
+
+    class Meta:
+        verbose_name = "Презентация проекта"
+        verbose_name_plural = "Презентации проекта"
+
+    def __str__(self):
+        return self.alt

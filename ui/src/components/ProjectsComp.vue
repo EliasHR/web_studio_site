@@ -3,45 +3,51 @@
         <div class="container">
             <h2-custom class="projects__title">Наши проекты</h2-custom>
             <div class="projects__wrapper">
-                <div class="projects__item" v-if="projectsStore.projects.length > 0">
-                    <a href="#" class="projects__link">
-                        <div
-                            class="projects__item-bg"
-                            :style="{
-                                backgroundImage: `url(${getCoverImage(projectsStore.projects[0])})`
+                <div
+                    class="projects__item"
+                    v-if="projectsStore.projects.length > 0"
+                    @click="
+                        handleClick(
+                            projectsStore.projects[0].enable_detail,
+                            projectsStore.projects[0].url
+                        )
+                    "
+                >
+                    <div
+                        class="projects__item-bg"
+                        :style="{
+                            backgroundImage: `url(${getCoverImage(projectsStore.projects[0])})`
+                        }"
+                    >
+                        <h3
+                            class="projects__item-title"
+                            :class="{
+                                'projects__item-title_white':
+                                    projectsStore.projects[0].title_alt_color
                             }"
                         >
-                            <h3
-                                class="projects__item-title"
-                                :class="{
-                                    'projects__item-title_white':
-                                        projectsStore.projects[0].title_alt_color
-                                }"
-                            >
-                                {{ this.projectsStore.projects[0].title }}
-                            </h3>
-                        </div>
-                    </a>
+                            {{ this.projectsStore.projects[0].title }}
+                        </h3>
+                    </div>
                 </div>
 
                 <div
                     class="projects__item"
                     v-for="(project, index) in this.projectsStore.projects.slice(1)"
                     :key="index"
+                    @click="handleClick(project.enable_detail, project.url)"
                 >
-                    <a href="#" class="projects__link">
-                        <div
-                            class="projects__item-bg"
-                            :style="{ backgroundImage: `url(${getCoverImage(project)})` }"
+                    <div
+                        class="projects__item-bg"
+                        :style="{ backgroundImage: `url(${getCoverImage(project)})` }"
+                    >
+                        <h3
+                            class="projects__item-title"
+                            :class="{ 'projects__item-title_white': project.title_alt_color }"
                         >
-                            <h3
-                                class="projects__item-title"
-                                :class="{ 'projects__item-title_white': project.title_alt_color }"
-                            >
-                                {{ project.title }}
-                            </h3>
-                        </div>
-                    </a>
+                            {{ project.title }}
+                        </h3>
+                    </div>
                 </div>
 
                 <div class="projects__item">
@@ -58,7 +64,7 @@
                         />
                         <button
                             class="projects__request-button projects__link projects__item-title_white"
-                            @click="showDialog = true"
+                            @click="showDialogForm = true"
                         >
                             Оставить заявку
                         </button>
@@ -67,26 +73,37 @@
             </div>
         </div>
     </section>
-    <dialog-form v-if="showDialog" @close="showDialog = false" :type="'app'" :blackText="true">
+    <dialog-form
+        v-if="showDialogForm"
+        @close="showDialogForm = false"
+        :type="'app'"
+        :blackText="true"
+    >
         Отправить
     </dialog-form>
+    <dialog-projects v-if="showDialogProject" @close="showDialogProject = false">
+        Отправить
+    </dialog-projects>
 </template>
 
 <script>
 import H2Custom from '@/components/ui/typographics/H2Custom.vue'
 import { useProjectStore } from '@/stores/projects'
 import DialogForm from '@/components/ui/dialog/DialogForm.vue'
+import DialogProjects from '@/components/ui/dialog/DialogProject.vue'
 
 export default {
     name: 'projects-comp',
     components: {
         H2Custom,
-        DialogForm
+        DialogForm,
+        DialogProjects
     },
     data() {
         return {
             currentBreakpoint: '',
-            showDialog: false
+            showDialogForm: false,
+            showDialogProject: false
         }
     },
     setup() {
@@ -139,6 +156,12 @@ export default {
                 case '320':
                     return project.cover_314_webp ? project.cover_314_webp : project.cover_314
             }
+        },
+        handleClick(enable_detail, project_url) {
+            if (enable_detail) {
+                this.projectsStore.getProject(project_url)
+                this.showDialogProject = true
+            }
         }
     }
 }
@@ -160,6 +183,10 @@ export default {
         height: 336px;
         background-color: var(--primary-seryy);
         border-radius: 8px;
+        cursor: pointer;
+        &:hover .projects__item-title {
+            text-decoration: underline;
+        }
     }
     &__item-bg {
         background-size: 100% 100%;
@@ -185,11 +212,6 @@ export default {
     }
     &__item-title_white {
         color: var(--primary-white);
-    }
-    &__link {
-        &:hover {
-            text-decoration: underline;
-        }
     }
     &__request {
         display: flex;

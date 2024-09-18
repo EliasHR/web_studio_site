@@ -47,10 +47,10 @@
                             </li>
                             <li class="sidemenu__item">
                                 <nav-item
-                                    href="mailto:info@codemode.net"
+                                    href="mailto:info@mycodemode.ru"
                                     @click="navOpen = !navOpen"
                                 >
-                                    info@codemode.net
+                                    info@mycodemode.ru
                                 </nav-item>
                             </li>
                             <li class="sidemenu__item">
