@@ -2,7 +2,7 @@
     <section class="projects" id="examples">
         <div class="container">
             <h2-custom class="projects__title">Наши проекты</h2-custom>
-            <div class="projects__wrapper">
+            <div class="projects__wrapper" v-if="!projectsStore.projectsIsLoading">
                 <div
                     class="projects__item"
                     v-if="projectsStore.projects.length > 0"
@@ -71,6 +71,7 @@
                     </div>
                 </div>
             </div>
+            <loading-comp v-else/>
         </div>
     </section>
     <dialog-form
@@ -87,17 +88,19 @@
 </template>
 
 <script>
-import H2Custom from '@/components/ui/typographics/H2Custom.vue'
-import { useProjectStore } from '@/stores/projects'
 import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 import DialogProjects from '@/components/ui/dialog/DialogProject.vue'
+import LoadingComp from '@/components/ui/LoadingComp.vue'
+import H2Custom from '@/components/ui/typographics/H2Custom.vue'
+import { useProjectStore } from '@/stores/projects'
 
 export default {
     name: 'projects-comp',
     components: {
         H2Custom,
         DialogForm,
-        DialogProjects
+        DialogProjects,
+        LoadingComp
     },
     data() {
         return {

@@ -8,6 +8,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     srcset_tablet = serializers.ImageField()
     srcset_mobile = serializers.ImageField()"""
 
+    video_poster_webp = serializers.ImageField()
+
     class Meta:
         model = Review
-        fields = ["text", "video_file", "name"]
+        fields = ["text", "video_file", "video_poster", "video_poster_webp", "name"]

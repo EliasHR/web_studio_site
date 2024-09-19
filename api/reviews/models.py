@@ -28,6 +28,18 @@ class Review(models.Model):
         blank=True,
         null=True,
     )
+    video_poster = models.ImageField(
+        verbose_name="Постер для видео-отзыва",
+        upload_to="videoreviews",
+        blank=True,
+        null=True,
+    )
+    video_poster_webp = ImageSpecField(
+        source="video_poster",
+        format="WEBP",
+        options={"quality": 100},
+    )
+
     text = models.TextField(max_length=500, verbose_name="Текст отзыва", blank=True, null=True)
     name = models.CharField(max_length=100, verbose_name="Имя клиента")
 

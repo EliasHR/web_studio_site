@@ -1,7 +1,7 @@
 <template>
     <section class="reviews" id="reviews">
         <div class="container">
-            <div class="reviews__wrapper">
+            <div class="reviews__wrapper" v-if="!reviewsStore.reviewsIsLoading">
                 <swiper-comp />
                 <picture class="swiper-slide__image">
                     <source
@@ -24,17 +24,30 @@
                     />
                 </picture>
             </div>
+            <loading-comp v-else />
         </div>
     </section>
 </template>
 
 <script>
+import LoadingComp from '@/components/ui/LoadingComp.vue'
 import SwiperComp from '@/components/ui/swiper/SwiperComp.vue'
+import { useReviewStore } from '@/stores/reviews'
 
 export default {
     name: 'reviews-comp',
     components: {
-        SwiperComp
+        SwiperComp,
+        LoadingComp
+    },
+    setup() {
+        const reviewsStore = useReviewStore()
+        return {
+            reviewsStore
+        }
+    },
+    mounted() {
+        this.reviewsStore.getReviews()
     }
 }
 </script>

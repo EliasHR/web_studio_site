@@ -2,7 +2,7 @@
     <div class="dialog-project" @click.stop="$emit('close')">
         <div class="dialog-project__container" @click.stop>
             <icon-close class="dialog-project__close" @click="$emit('close')" />
-            <div class="dialog-project__wrapper">
+            <div class="dialog-project__wrapper" v-if="!projectsStore.projectIsLoading">
                 <div class="dialog-project__presentation">
                     <img
                         v-for="(presentation, index) in this.projectsStore.project.images"
@@ -91,6 +91,7 @@
                     </div>
                 </div>
             </div>
+            <div class="dialog-project__loading" v-else><loading-comp/></div>
         </div>
     </div>
     <dialog-form v-if="showDialog" @close="showDialog = false" :type="'ring'" :blackText="true">
@@ -171,6 +172,11 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    &__loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     &__container {
         position: relative;
         //overflow: hidden;

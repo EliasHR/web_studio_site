@@ -28,6 +28,11 @@
                             controls
                             v-if="review.video_file"
                             type="video/mp4"
+                            :poster="
+                                review.video_poster_webp
+                                    ? review.video_poster_webp
+                                    : review.video_poster
+                            "
                         ></video>
                         <p-small class="swiper-slide__text" v-else>«{{ review.text }}»</p-small>
                         <p class="swiper-slide__name">{{ review.name }}</p>
@@ -46,12 +51,12 @@
 </template>
 
 <script>
-import H2Custom from '@/components/ui/typographics/H2Custom.vue'
-import PSmall from '@/components/ui/typographics/PSmall.vue'
-import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import SwiperNext from '@/components/ui/icons/SwiperNext.vue'
 import SwiperPrev from '@/components/ui/icons/SwiperPrev.vue'
+import H2Custom from '@/components/ui/typographics/H2Custom.vue'
+import PSmall from '@/components/ui/typographics/PSmall.vue'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
 
 import 'swiper/css'
 import 'swiper/css/autoplay'
@@ -76,9 +81,6 @@ export default {
             modules: [Navigation, Pagination, Autoplay],
             reviewsStore
         }
-    },
-    mounted() {
-        this.reviewsStore.getReviews()
     }
 }
 </script>
