@@ -4,6 +4,7 @@
             class="sidemenu__btn"
             @click="navOpen = !navOpen"
             v-bind:class="{ active: navOpen }"
+            title="Открыть меню"
         >
             <icon-hamburger v-if="!navOpen" />
             <icon-close v-else />
