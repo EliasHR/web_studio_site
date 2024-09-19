@@ -2,8 +2,11 @@
     <div class="dialog-project" @click.stop="$emit('close')">
         <div class="dialog-project__container" @click.stop>
             <icon-close class="dialog-project__close" @click="$emit('close')" />
-            <div class="dialog-project__wrapper" v-if="!projectsStore.projectIsLoading">
-                <div class="dialog-project__presentation">
+            <div
+                class="dialog-project__wrapper"
+                :class="{ 'dialog-project__wrapper_one-column': projectsStore.projectIsLoading }"
+            >
+                <div class="dialog-project__presentation" v-if="!projectsStore.projectIsLoading">
                     <img
                         v-for="(presentation, index) in this.projectsStore.project.images"
                         :key="index"
@@ -14,7 +17,7 @@
                         :alt="presentation.alt"
                     />
                 </div>
-                <div class="dialog-project__info">
+                <div class="dialog-project__info" v-if="!projectsStore.projectIsLoading">
                     <h2 class="dialog-project__info-title">
                         {{ projectsStore.project.title }}
                     </h2>
@@ -90,8 +93,8 @@
                         </div>
                     </div>
                 </div>
+                <div class="dialog-project__loading" v-else><loading-comp /></div>
             </div>
-            <div class="dialog-project__loading" v-else><loading-comp/></div>
         </div>
     </div>
     <dialog-form v-if="showDialog" @close="showDialog = false" :type="'ring'" :blackText="true">
@@ -109,6 +112,7 @@ import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
 import PSuperSmall from '@/components/ui/typographics/PSuperSmall.vue'
 import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 import { useProjectStore } from '@/stores/projects'
+import LoadingComp from '@/components/ui/LoadingComp.vue'
 
 export default {
     name: 'dialog-project',
@@ -120,7 +124,8 @@ export default {
         NavItem,
         ButtonMiddle,
         PSuperSmall,
-        DialogForm
+        DialogForm,
+        LoadingComp
     },
     data() {
         return {
@@ -191,6 +196,9 @@ export default {
         display: grid;
         grid-template-columns: auto 309px;
         box-sizing: border-box;
+    }
+    &__wrapper_one-column {
+        grid-template-columns: auto;
     }
     &__close {
         position: absolute;
