@@ -74,7 +74,9 @@ import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
 import GiftComp from '@/components/ui/GiftComp.vue'
 import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
-import top__illustration from '@/assets/img/top_illustration.png'
+import top_illustration from '@/assets/img/top_illustration.png'
+import top_illustration_tablet from '@/assets/img/top_illustration_960.png'
+import top_illustration_mobile from '@/assets/img/top_illustration_560.png'
 
 export default {
     name: 'top-comp',
@@ -88,18 +90,53 @@ export default {
             showDialog: false
         }
     },
-    head() {
+    mounted() {
+        this.preloadImage()
+    },
+    methods: {
+        preloadImage() {
+            const head = document.head
+            const link = document.createElement('link')
+            link.rel = 'preload'
+            link.as = 'image'
+
+            if (window.innerWidth <= 767.99) {
+                link.href = top_illustration_mobile
+            } else if (window.innerWidth <= 1199.99) {
+                link.href = top_illustration_tablet
+            } else {
+                link.href = top_illustration
+            }
+
+            head.appendChild(link)
+        }
+    }
+    /* head() {
         return {
             link: [
                 {
                     rel: 'preload',
                     fetchpriority: 'high',
                     as: 'image',
-                    href: top__illustration
+                    href: top_illustration
+                },
+                {
+                    rel: 'preload',
+                    fetchpriority: 'high',
+                    as: 'image',
+                    media: '(max-width: 767.99px)',
+                    href: top_illustration_mobile
+                },
+                {
+                    rel: 'preload',
+                    fetchpriority: 'high',
+                    as: 'image',
+                    media: '(max-width: 1199.99px)',
+                    href: top_illustration_tablet
                 }
             ]
         }
-    }
+    } */
 }
 </script>
 
