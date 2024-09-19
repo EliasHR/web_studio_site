@@ -158,6 +158,7 @@ export default {
         &:hover {
             background: none;
             text-decoration: underline;
+            box-shadow: none;
         }
     }
     &__link {

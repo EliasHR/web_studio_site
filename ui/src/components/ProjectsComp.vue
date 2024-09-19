@@ -196,9 +196,9 @@ export default {
         border-radius: 8px;
         height: 100%;
         width: 100%;
-        border: 1px solid transparent;
+        //border: 1px solid transparent;
         &:hover {
-            border-color: var(--primary-accent);
+            box-shadow: 0 0 10px 2px #268eed;
         }
     }
     & .projects__item:first-child {

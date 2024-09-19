@@ -37,8 +37,9 @@ export default {
     white-space: nowrap;
 
     &:hover {
-        background: #6bb6fb;
+        //background: #6bb6fb;
         cursor: pointer;
+        box-shadow: 0 0 10px 2px #268eed;
     }
 
     &:focus {
