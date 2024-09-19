@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <loading-comp v-else/>
+            <loading-comp v-else />
         </div>
     </section>
     <dialog-form

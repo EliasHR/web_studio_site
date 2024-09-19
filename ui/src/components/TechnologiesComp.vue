@@ -57,6 +57,7 @@
                             src="@/assets/img/technologies_aiogram.webp"
                             width="29px"
                             height="29px"
+                            alt="Иконка библиотеки Aiogram"
                         />
                         <span>Aiogram</span>
                     </li>

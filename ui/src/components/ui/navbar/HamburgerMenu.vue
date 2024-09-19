@@ -64,6 +64,7 @@
                             <nav-item
                                 href="https://wa.me/37491368838"
                                 target="_blank"
+                                title="Переход на диалог в месседжер What'sApp"
                                 @click="navOpen = !navOpen"
                             >
                                 <hamburger-whatsapp />
@@ -71,6 +72,7 @@
                             <nav-item
                                 href="https://t.me/code_mode7"
                                 target="_blank"
+                                title="Переход на диалог в месседжер Telegram"
                                 @click="navOpen = !navOpen"
                             >
                                 <hamburger-telegram />

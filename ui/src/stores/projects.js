@@ -17,8 +17,7 @@ export const useProjectStore = defineStore('projects', {
                 const response = await axios.get(apiUrl + '/projects/')
                 this.projects = response.data
                 this.projectsIsLoading = false
-            }
-            catch (e) {
+            } catch (e) {
                 console.log(e)
             }
         },

@@ -1,9 +1,19 @@
 <template>
     <div class="social">
-        <a href="https://wa.me/37491368838" target="_blank" class="social__link">
+        <a
+            href="https://wa.me/37491368838"
+            title="Переход на диалог в месседжер What'sApp"
+            target="_blank"
+            class="social__link"
+        >
             <fixed-whats-app class="social__wa" />
         </a>
-        <a href="https://t.me/code_mode7" target="_blank" class="social__link">
+        <a
+            href="https://t.me/code_mode7"
+            title="Переход на диалог в месседжер Telegram"
+            target="_blank"
+            class="social__link"
+        >
             <fixed-telegram class="social__tg" />
         </a>
     </div>

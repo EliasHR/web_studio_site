@@ -1,6 +1,6 @@
 <template>
     <div class="logo">
-        <a class="logo__link" href="/">
+        <a class="logo__link" href="/" title="Переход на главную страницу сайта">
             <logo-icon class="logo__icon" width="161px" height="50px" />
         </a>
     </div>

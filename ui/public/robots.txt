@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /adminpanel/
+
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+Disallow: /adminpanel/
+
+User-agent: Googlebot
+Allow: / 
+Disallow: /api/
+Disallow: /adminpanel/
+ 
+Host: https://mycodemode.ru
+Sitemap: https://mycodemode.ru/sitemap.xml

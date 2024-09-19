@@ -35,7 +35,13 @@
                         srcset="@/assets/img/top_illustration_960.png"
                         media="(max-width: 1199.99px)"
                     />
-                    <img class="top__illustration" src="@/assets/img/top_illustration.png" />
+                    <img
+                        class="top__illustration"
+                        src="@/assets/img/top_illustration.png"
+                        alt="Декоративный элемент главного блока страницы - треугольные скобки с косой чертой внутри"
+                        width="500px"
+                        height="350px"
+                    />
                 </picture>
             </div>
 
@@ -207,6 +213,8 @@ export default {
     .top {
         &__illustration {
             margin-bottom: 80px;
+            width: 297px;
+            height: 249px;
         }
     }
 }
@@ -274,6 +282,8 @@ export default {
         }
         &__illustration {
             position: inherit;
+            width: 282px;
+            height: 182px;
         }
         &__actions {
             flex-direction: column;

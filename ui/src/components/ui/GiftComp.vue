@@ -1,6 +1,12 @@
 <template>
     <div class="gift">
-        <img class="gift__pdf" src="@/assets/img/pdf.png" width="40px" height="40px" />
+        <img
+            class="gift__pdf"
+            src="@/assets/img/pdf.png"
+            alt="Иконка PDF-файла"
+            width="40px"
+            height="40px"
+        />
         <div class="gift__wrapper">
             <div class="gift__text">
                 <div>Скачать бесплатно</div>
@@ -10,7 +16,7 @@
                     >
                 </div>
             </div>
-            <a class="gift__link" href="Оптимизация сайта.pdf" download
+            <a class="gift__link" href="Оптимизация сайта.pdf" download title="Скачать PDF-файл"
                 ><gift-download class="geft__download"
             /></a>
         </div>

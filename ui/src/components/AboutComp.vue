@@ -1,13 +1,6 @@
 <template>
     <section class="about" id="about">
         <div class="container">
-            <!-- <img
-                class="about__image"
-                src="@/assets/img/about_1.png"
-                alt="Картина семейного древа, стоящая на столе в окружении часов и цветка."
-                width="560px"
-                height="376px"
-            /> -->
             <div class="about__content">
                 <h2-custom class="about__title">О нас</h2-custom>
                 <div class="about__wrapper">
@@ -65,7 +58,13 @@
                                 media="(max-width: 1199.99px)"
                             />
 
-                            <img src="@/assets/img/about.png" alt="" srcset="" />
+                            <img
+                                class="about__image"
+                                src="@/assets/img/about.png"
+                                alt="Декоративый элемент страницы 'О нас'"
+                                width="568px"
+                                height="817px"
+                            />
                         </picture>
                     </div>
                 </div>
@@ -142,6 +141,10 @@ export default {
         &__title {
             left: 0px;
         }
+        &__image {
+            width: 420px;
+            height: 817px;
+        }
     }
 }
 
@@ -165,6 +168,10 @@ export default {
         &__wrapper {
             gap: 24px;
             align-items: center;
+        }
+        &__image {
+            width: 380px;
+            height: 286px;
         }
     }
 }
@@ -195,6 +202,10 @@ export default {
             padding: 62px 4px 0px 4px;
         }
         &__swiper {
+            width: 314px;
+            height: 286px;
+        }
+        &__image {
             width: 314px;
             height: 286px;
         }
