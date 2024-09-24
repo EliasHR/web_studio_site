@@ -18,14 +18,13 @@ const router = createRouter({
         {
             path: '/:pathMatch(.*)*',
             name: 'not-found',
-            component: Page404
         }
     ]
 })
 
 router.beforeEach((to, from, next) => {
     if (to.matched.length === 0) {
-        window.location.replace('/404');
+        window.location.href = "/404"
     } else {
         next();
     }
