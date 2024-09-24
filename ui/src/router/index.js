@@ -17,8 +17,9 @@ const router = createRouter({
         },
         {
             path: '/:pathMatch(.*)*',
-            beforeEnter: (to, from, next) => {
-                window.location.href = '/404';
+            //redirect: { name: '404' }
+            beforeEnter() {
+                window.location.href = '/404'; // Перенаправление на страницу 404
             }
         },
     ]
