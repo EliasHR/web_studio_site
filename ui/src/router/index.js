@@ -17,7 +17,7 @@ const router = createRouter({
         },
         {
             path: '/:pathMatch(.*)*',
-            beforeRouteLeave(to, from) {
+            beforeRouteEnter(to, from) {
                 window.location.href = "/404"
             }
         }
