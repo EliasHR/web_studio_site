@@ -23,10 +23,10 @@ const router = createRouter({
         {
             path: '/:pathMatch(.*)*',
             //redirect: '/404'
-            //beforeEnter() { window.location.href = "/404" },
-            beforeEnter(to, from, next) {
+            beforeEnter() { window.location.href = "/404" },
+            /* beforeEnter(to, from, next) {
                 next('/404');
-            }
+            } */
         },
     ]
 })
