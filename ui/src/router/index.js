@@ -10,11 +10,20 @@ const router = createRouter({
             name: 'home',
             component: HomeView
         },
-        {
+        /* {
             path: '/:pathMatch(.*)*',
             name: '404',
             component: Page404
-        }
+        } */
+        {
+            path: '/404',
+            name: '404',
+            component: Page404,
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            beforeEnter() { window.location.href = "/404" },
+        },
     ]
 })
 
