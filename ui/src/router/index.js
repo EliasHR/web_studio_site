@@ -17,10 +17,16 @@ const router = createRouter({
         },
         {
             path: '/:pathMatch(.*)*',
-            //redirect: '/404'
-            beforeEnter() { window.location.href = "/404" },
         },
     ]
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.length === 0) {
+        next('/404');
+    } else {
+        next();
+    }
+});
 
 export default router
