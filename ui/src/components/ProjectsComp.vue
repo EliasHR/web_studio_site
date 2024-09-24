@@ -287,5 +287,10 @@ export default {
 }
 
 @media (max-width: 399.99px) {
+    .projects {
+        &__item {
+            height: 314px;
+        }
+    }
 }
 </style>
