@@ -2,16 +2,22 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /adminpanel/
+Disallow: /static/
+Disallow: /media/
 
 User-agent: Yandex
 Allow: /
 Disallow: /api/
 Disallow: /adminpanel/
+Disallow: /static/
+Disallow: /media/
 
 User-agent: Googlebot
 Allow: / 
 Disallow: /api/
 Disallow: /adminpanel/
+Disallow: /static/
+Disallow: /media/
  
 Host: https://mycodemode.ru
 Sitemap: https://mycodemode.ru/sitemap.xml
