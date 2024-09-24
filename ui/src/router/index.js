@@ -24,7 +24,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
     if (to.matched.length === 0) {
-        window.location.href = "/404"
+        window.location.replace('/404');
     } else {
         next();
     }
