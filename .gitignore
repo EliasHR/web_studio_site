@@ -61,5 +61,4 @@ docs/html
 
 media/
 
-.env.development
-.env.production
+.env*
