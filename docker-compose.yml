@@ -4,7 +4,6 @@ services:
             context: ./api
             dockerfile: Dockerfile
         container_name: web-studio-api
-        command: sh -c "gunicorn api.wsgi:application --bind 0.0.0.0:80"
         restart: always
         volumes:
             - ./api:/api
@@ -27,8 +26,6 @@ services:
             - ./nginx/conf.d:/etc/nginx/conf.d
             - ./static:/app/static
             - ./media:/app/media
-        #depends_on:
-        #    - family-tree-api
         networks:
             - proxy
             - web-studio-app

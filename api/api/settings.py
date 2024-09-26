@@ -10,40 +10,32 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+from dotenv import load_dotenv
 
+load_dotenv()
+
+SECRET_KEY = os.environ.get("SECRET_KEY")
+DEBUG = os.environ.get("DEBUG") == "True"
+
+CORS_ALLOWED_ORIGINS = str(os.environ.get("CORS_ALLOWED_ORIGINS")).split(",")
+ALLOWED_HOSTS = str(os.environ.get("ALLOWED_HOSTS")).split(",")
+
+if not DEBUG:
+    CSRF_TRUSTED_ORIGINS = str(os.environ.get("CSRF_TRUSTED_ORIGINS")).split(",")
+    SECURE_SSL_REDIRECT = False
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
+CHAT_ID = os.environ.get("CHAT_ID")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-twi^6!##da1-4w)r(wo)zsboyctty)r0_oo@g^3jqm_#7w2bnh"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-SECURE_SSL_REDIRECT = False
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-
-ALLOWED_HOSTS = [
-    "mycodemode.ru",
-    "localhost",
-    "127.0.0.1",
-]
-TG_BOT_TOKEN = "7218666730:AAFy1AAWh6uFa8v3_kVRGa04EtXHOjGjF3I"
-CHAT_ID = "-4543243542"
-
-CORS_ALLOWED_ORIGINS = [
-    "http://*.127.0.0.1:8000",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "http://*.127.0.0.1:5173",
-    "http://localhost:5173",
-    "http://127.0.0.1:5173",
-    "https://mycodemode.ru",
-]
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Application definition
 
