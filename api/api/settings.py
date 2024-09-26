@@ -23,10 +23,9 @@ DEBUG = os.environ.get("DEBUG") == "True"
 CORS_ALLOWED_ORIGINS = str(os.environ.get("CORS_ALLOWED_ORIGINS")).split(",")
 ALLOWED_HOSTS = str(os.environ.get("ALLOWED_HOSTS")).split(",")
 
-if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = str(os.environ.get("CSRF_TRUSTED_ORIGINS")).split(",")
-    SECURE_SSL_REDIRECT = False
-    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+CSRF_TRUSTED_ORIGINS = str(os.environ.get("CSRF_TRUSTED_ORIGINS")).split(",")
+SECURE_SSL_REDIRECT = False
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
