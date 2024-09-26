@@ -1,8 +1,12 @@
+import logging
+
 import requests
 from django.shortcuts import render
-from api.settings import CHAT_ID, TG_BOT_TOKEN
 from rest_framework import generics
 
+from api.settings import CHAT_ID, TG_BOT_TOKEN
+
+logger = logging.getLogger(__name__)
 from .models import Application
 from .serializers import ApplicationSerializer
 
@@ -43,8 +47,11 @@ def send_message_to_tg(application):
             "Не забудь зайти проверить."
         ),
     }
-    response = requests.post(url, data=data, timeout=10)
-    if response.status_code == 200:
+    try:
+        response = requests.post(url, data=data, timeout=10)
+        response.raise_for_status()
+        # logger.info("Message sent successfully")
         return True
-    else:
+    except requests.RequestException as e:
+        # logger.error(f"Failed to send message to Telegram: {e}")
         return False
