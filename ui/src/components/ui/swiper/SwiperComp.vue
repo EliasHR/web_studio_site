@@ -18,6 +18,7 @@
                 }"
                 :loop="true"
                 :speed="500"
+                :lazy="true"
             >
                 <swiper-slide v-for="review in reviewsStore.reviews" v-bind:key="review.name"
                     ><!-- :lazy="true"  -->

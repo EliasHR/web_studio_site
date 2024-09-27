@@ -61,6 +61,7 @@
                             alt="Шестерёнка"
                             width="213px"
                             height="236px"
+                            loading="lazy"
                         />
                         <button
                             class="projects__request-button projects__link projects__item-title_white"
