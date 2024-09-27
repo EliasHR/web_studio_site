@@ -39,12 +39,12 @@
                     @click="handleClick(project.enable_detail, project.url)"
                 >
                     <div class="projects__item-bg">
-                        <img
+                        <!-- <img
                             class="projects__item-bg-image"
                             :src="getCoverImage(project)"
                             alt="Обложка проекта"
                             loading="lazy"
-                        />
+                        /> -->
                         <h3
                             class="projects__item-title"
                             :class="{ 'projects__item-title_white': project.title_alt_color }"
