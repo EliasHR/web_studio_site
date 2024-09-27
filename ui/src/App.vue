@@ -22,25 +22,6 @@ if (isProd.value) {
     script_ym.innerHTML = `(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date(); for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }} k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(98393474, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true });`
     document.head.appendChild(script_ym)
 }
-
-import top_illustration from '@/assets/img/top_illustration.png'
-import top_illustration_tablet from '@/assets/img/top_illustration_960.png'
-import top_illustration_mobile from '@/assets/img/top_illustration_560.png'
-
-const head = document.head
-const link = document.createElement('link')
-link.rel = 'preload'
-link.as = 'image'
-
-if (window.innerWidth <= 767.99) {
-    link.href = top_illustration_mobile
-} else if (window.innerWidth <= 1199.99) {
-    link.href = top_illustration_tablet
-} else {
-    link.href = top_illustration
-}
-
-head.insertBefore(link, head.firstChild)
 </script>
 
 <template>
