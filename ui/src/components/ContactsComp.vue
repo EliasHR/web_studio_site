@@ -3,7 +3,7 @@
         <div class="container">
             <h2-custom class="contacts__title">Контакты</h2-custom>
             <div class="contacts__wrapper">
-                <form-comp :type="ring">Заказать обратный звонок</form-comp>
+                <form-comp :type="'ring'">Заказать обратный звонок</form-comp>
 
                 <div class="contacts__content">
                     <a href="tel:+37491368838">

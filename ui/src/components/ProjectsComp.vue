@@ -13,12 +13,13 @@
                         )
                     "
                 >
-                    <div
-                        class="projects__item-bg"
-                        :style="{
-                            backgroundImage: `url(${getCoverImage(projectsStore.projects[0])})`
-                        }"
-                    >
+                    <div class="projects__item-bg">
+                        <img
+                            class="projects__item-bg-image"
+                            :src="getCoverImage(projectsStore.projects[0])"
+                            alt="Обложка проекта"
+                            loading="lazy"
+                        />
                         <h3
                             class="projects__item-title"
                             :class="{
@@ -37,10 +38,13 @@
                     :key="index"
                     @click="handleClick(project.enable_detail, project.url)"
                 >
-                    <div
-                        class="projects__item-bg"
-                        :style="{ backgroundImage: `url(${getCoverImage(project)})` }"
-                    >
+                    <div class="projects__item-bg">
+                        <img
+                            class="projects__item-bg-image"
+                            :src="getCoverImage(project)"
+                            alt="Обложка проекта"
+                            loading="lazy"
+                        />
                         <h3
                             class="projects__item-title"
                             :class="{ 'projects__item-title_white': project.title_alt_color }"
@@ -200,10 +204,22 @@ export default {
         border-radius: 8px;
         height: 100%;
         width: 100%;
+        position: relative;
+        overflow: hidden;
         //border: 1px solid transparent;
         &:hover {
             box-shadow: 0 0 10px 2px #268eed;
         }
+    }
+    &__item-bg-image {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
     }
     & .projects__item:first-child {
         grid-column: span 2;
@@ -213,6 +229,8 @@ export default {
         font: 600 16px / 1.75 var(--font-family);
         color: var(--primary-dark-blue);
         max-width: 316px;
+        z-index: 1;
+        position: relative;
     }
     &__item-title_white {
         color: var(--primary-white);

@@ -116,6 +116,7 @@ import LoadingComp from '@/components/ui/LoadingComp.vue'
 
 export default {
     name: 'dialog-project',
+    emits: ['close'],
     components: {
         IconClose,
         IconCheckmark,
