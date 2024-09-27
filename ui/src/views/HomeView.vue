@@ -3,8 +3,8 @@ import { defineAsyncComponent } from 'vue'
 import TopComp from '@/components/TopComp.vue'
 import ServicesComp from '@/components/ServicesComp.vue'
 import PromoComp from '@/components/PromoComp.vue'
-//import ProjectsComp from '@/components/ProjectsComp.vue'
-const ProjectsComp = defineAsyncComponent(() => import('@/components/ProjectsComp.vue'))
+import ProjectsComp from '@/components/ProjectsComp.vue'
+//const ProjectsComp = defineAsyncComponent(() => import('@/components/ProjectsComp.vue'))
 import InstructionsComp from '@/components/InstructionsComp.vue'
 import TroublesComp from '@/components/TroublesComp.vue'
 import ReviewsComp from '@/components/ReviewsComp.vue'
@@ -20,7 +20,6 @@ import ContactsComp from '@/components/ContactsComp.vue'
         <services-comp />
         <instructions-comp />
         <projects-comp />
-        <!-- <ProjectsComp /> -->
         <promo-comp />
         <about-comp />
         <troubles-comp />
