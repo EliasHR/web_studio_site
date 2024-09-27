@@ -90,12 +90,11 @@ export default {
             showDialog: false
         }
     },
-    /* beforeCreate() {
+    beforeCreate() {
         const head = document.head
         const link = document.createElement('link')
         link.rel = 'preload'
         link.as = 'image'
-
         if (window.innerWidth <= 767.99) {
             link.href = top_illustration_mobile
         } else if (window.innerWidth <= 1199.99) {
@@ -103,28 +102,8 @@ export default {
         } else {
             link.href = top_illustration
         }
-
         head.insertBefore(link, head.firstChild)
-        //this.preloadImage()
-    }, */
-    /* methods: {
-        preloadImage() {
-            const head = document.head
-            const link = document.createElement('link')
-            link.rel = 'preload'
-            link.as = 'image'
-
-            if (window.innerWidth <= 767.99) {
-                link.href = top_illustration_mobile
-            } else if (window.innerWidth <= 1199.99) {
-                link.href = top_illustration_tablet
-            } else {
-                link.href = top_illustration
-            }
-
-            head.insertBefore(link, head.firstChild)
-        }
-    } */
+    }
 }
 </script>
 
