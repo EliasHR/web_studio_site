@@ -30,7 +30,7 @@ export default {
         H2Custom,
         FormComp,
         PSmall
-    }
+    },
 }
 </script>
 

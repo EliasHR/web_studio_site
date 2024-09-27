@@ -28,7 +28,11 @@
                         srcset="@/assets/img/top_illustration_960.png"
                         media="(max-width: 1199.99px)"
                     />
-                    <img class="not-found__illustration" src="@/assets/img/top_illustration.png" />
+                    <img
+                        class="not-found__illustration"
+                        src="@/assets/img/top_illustration.png"
+                        loading="lazy"
+                    />
                 </picture>
             </div>
         </div>

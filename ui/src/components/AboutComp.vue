@@ -64,6 +64,7 @@
                                 alt="Декоративый элемент страницы 'О нас'"
                                 width="568px"
                                 height="817px"
+                                loading="lazy"
                             />
                         </picture>
                     </div>
