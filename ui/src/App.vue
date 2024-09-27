@@ -4,8 +4,8 @@ import HeaderComp from '@/components/HeaderComp.vue'
 import FooterComp from '@/components/FooterComp.vue'
 import FloatingButtons from '@/components/ui/FloatingButtons.vue'
 import { ref } from 'vue'
-/* 
-const isProd = ref(import.meta.env.PROD)
+
+/* const isProd = ref(import.meta.env.PROD)
 
 if (isProd.value) {
     const script_ga1 = document.createElement('script')
