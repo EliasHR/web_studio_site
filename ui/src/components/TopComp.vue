@@ -28,16 +28,16 @@
                 </div>
                 <picture>
                     <source
-                        srcset="@/assets/img/top_illustration_560.png"
+                        srcset="/top_illustration_560.png"
                         media="(max-width: 767.99px)"
                     />
                     <source
-                        srcset="@/assets/img/top_illustration_960.png"
+                        srcset="/top_illustration_960.png"
                         media="(max-width: 1199.99px)"
                     />
                     <img
                         class="top__illustration"
-                        src="@/assets/img/top_illustration.png"
+                        src="/top_illustration.png"
                         alt="Декоративный элемент главного блока страницы - треугольные скобки с косой чертой внутри"
                         width="500px"
                         height="350px"
@@ -74,9 +74,9 @@ import ButtonMiddle from '@/components/ui/buttons/ButtonMiddle.vue'
 import GiftComp from '@/components/ui/GiftComp.vue'
 import DialogForm from '@/components/ui/dialog/DialogForm.vue'
 
-import top_illustration from '@/assets/img/top_illustration.png'
+/* import top_illustration from '@/assets/img/top_illustration.png'
 import top_illustration_tablet from '@/assets/img/top_illustration_960.png'
-import top_illustration_mobile from '@/assets/img/top_illustration_560.png'
+import top_illustration_mobile from '@/assets/img/top_illustration_560.png' */
 
 export default {
     name: 'top-comp',
@@ -90,7 +90,7 @@ export default {
             showDialog: false
         }
     },
-    beforeCreate() {
+    /* beforeCreate() {
         const head = document.head
         const link = document.createElement('link')
         link.rel = 'preload'
@@ -103,7 +103,7 @@ export default {
             link.href = top_illustration
         }
         head.insertBefore(link, head.firstChild)
-    }
+    } */
 }
 </script>
 
