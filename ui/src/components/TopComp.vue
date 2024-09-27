@@ -91,10 +91,24 @@ export default {
             showDialog: false
         }
     },
-    mounted() {
-        this.preloadImage()
+    beforeCreate() {
+        const head = document.head
+        const link = document.createElement('link')
+        link.rel = 'preload'
+        link.as = 'image'
+
+        if (window.innerWidth <= 767.99) {
+            link.href = top_illustration_mobile
+        } else if (window.innerWidth <= 1199.99) {
+            link.href = top_illustration_tablet
+        } else {
+            link.href = top_illustration
+        }
+
+        head.insertBefore(link, head.firstChild)
+        //this.preloadImage()
     },
-    methods: {
+    /* methods: {
         preloadImage() {
             const head = document.head
             const link = document.createElement('link')
@@ -109,33 +123,7 @@ export default {
                 link.href = top_illustration
             }
 
-            head.insertBefore(link, head.firstChild);
-        }
-    }
-    /* head() {
-        return {
-            link: [
-                {
-                    rel: 'preload',
-                    fetchpriority: 'high',
-                    as: 'image',
-                    href: top_illustration
-                },
-                {
-                    rel: 'preload',
-                    fetchpriority: 'high',
-                    as: 'image',
-                    media: '(max-width: 767.99px)',
-                    href: top_illustration_mobile
-                },
-                {
-                    rel: 'preload',
-                    fetchpriority: 'high',
-                    as: 'image',
-                    media: '(max-width: 1199.99px)',
-                    href: top_illustration_tablet
-                }
-            ]
+            head.insertBefore(link, head.firstChild)
         }
     } */
 }
