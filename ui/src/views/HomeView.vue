@@ -1,17 +1,26 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import TopComp from '@/components/TopComp.vue'
-import ServicesComp from '@/components/ServicesComp.vue'
-import PromoComp from '@/components/PromoComp.vue'
-import ProjectsComp from '@/components/ProjectsComp.vue'
-//const ProjectsComp = defineAsyncComponent(() => import('@/components/ProjectsComp.vue'))
-import InstructionsComp from '@/components/InstructionsComp.vue'
-import TroublesComp from '@/components/TroublesComp.vue'
-import ReviewsComp from '@/components/ReviewsComp.vue'
-import AboutComp from '@/components/AboutComp.vue'
-import TechnologiesComp from '@/components/TechnologiesComp.vue'
-import FaqComp from '@/components/FaqComp.vue'
-import ContactsComp from '@/components/ContactsComp.vue'
+//import ServicesComp from '@/components/ServicesComp.vue'
+//import PromoComp from '@/components/PromoComp.vue'
+//import ProjectsComp from '@/components/ProjectsComp.vue'
+//import InstructionsComp from '@/components/InstructionsComp.vue'
+//import TroublesComp from '@/components/TroublesComp.vue'
+//import ReviewsComp from '@/components/ReviewsComp.vue'
+//import AboutComp from '@/components/AboutComp.vue'
+//import TechnologiesComp from '@/components/TechnologiesComp.vue'
+//import FaqComp from '@/components/FaqComp.vue'
+//import ContactsComp from '@/components/ContactsComp.vue'
+const ServicesComp = defineAsyncComponent(() => import('@/components/ServicesComp.vue'))
+const PromoComp = defineAsyncComponent(() => import('@/components/PromoComp.vue'))
+const ProjectsComp = defineAsyncComponent(() => import('@/components/ProjectsComp.vue'))
+const InstructionsComp = defineAsyncComponent(() => import('@/components/InstructionsComp.vue'))
+const TroublesComp = defineAsyncComponent(() => import('@/components/TroublesComp.vue'))
+const ReviewsComp = defineAsyncComponent(() => import('@/components/ReviewsComp.vue'))
+const AboutComp = defineAsyncComponent(() => import('@/components/AboutComp.vue'))
+const TechnologiesComp = defineAsyncComponent(() => import('@/components/TechnologiesComp.vue'))
+const FaqComp = defineAsyncComponent(() => import('@/components/FaqComp.vue'))
+const ContactsComp = defineAsyncComponent(() => import('@/components/ContactsComp.vue'))
 </script>
 
 <template>
