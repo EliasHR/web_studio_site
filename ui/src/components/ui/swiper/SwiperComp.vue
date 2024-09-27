@@ -34,6 +34,7 @@
                                     ? review.video_poster_webp
                                     : review.video_poster
                             "
+                            loading="lazy"
                         ></video>
                         <p-small class="swiper-slide__text" v-else>«{{ review.text }}»</p-small>
                         <p class="swiper-slide__name">{{ review.name }}</p>
