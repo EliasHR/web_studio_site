@@ -90,7 +90,7 @@ export default {
             showDialog: false
         }
     },
-    beforeCreate() {
+    /* beforeCreate() {
         const head = document.head
         const link = document.createElement('link')
         link.rel = 'preload'
@@ -106,7 +106,7 @@ export default {
 
         head.insertBefore(link, head.firstChild)
         //this.preloadImage()
-    },
+    }, */
     /* methods: {
         preloadImage() {
             const head = document.head
