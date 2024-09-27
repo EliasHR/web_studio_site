@@ -109,7 +109,7 @@ export default {
                 link.href = top_illustration
             }
 
-            head.appendChild(link)
+            head.insertBefore(link, head.firstChild);
         }
     }
     /* head() {
