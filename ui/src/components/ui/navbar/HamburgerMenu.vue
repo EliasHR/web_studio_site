@@ -17,32 +17,32 @@
                     <div class="sidemenu__menu">
                         <ul class="sidemenu__list">
                             <li class="sidemenu__item">
-                                <nav-item href="#services" @click="navOpen = !navOpen">
+                                <nav-item href="/#services" @click="navOpen = !navOpen">
                                     Услуги
                                 </nav-item>
                             </li>
                             <li class="sidemenu__item">
-                                <nav-item href="#examples" @click="navOpen = !navOpen">
+                                <nav-item href="/#examples" @click="navOpen = !navOpen">
                                     Примеры проектов
                                 </nav-item>
                             </li>
                             <li class="sidemenu__item">
-                                <nav-item href="#about" @click="navOpen = !navOpen">
+                                <nav-item href="/#about" @click="navOpen = !navOpen">
                                     О нас
                                 </nav-item>
                             </li>
                             <li class="sidemenu__item">
-                                <nav-item href="#technologies" @click="navOpen = !navOpen">
+                                <nav-item href="/#technologies" @click="navOpen = !navOpen">
                                     Технологии
                                 </nav-item>
                             </li>
                             <li class="sidemenu__item">
-                                <nav-item href="#reviews" @click="navOpen = !navOpen">
+                                <nav-item href="/#reviews" @click="navOpen = !navOpen">
                                     Отзывы
                                 </nav-item>
                             </li>
                             <li class="sidemenu__item">
-                                <nav-item href="#contacts" @click="navOpen = !navOpen">
+                                <nav-item href="/#contacts" @click="navOpen = !navOpen">
                                     Контакты
                                 </nav-item>
                             </li>

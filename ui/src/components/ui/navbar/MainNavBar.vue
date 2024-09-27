@@ -1,11 +1,11 @@
 <template>
     <nav class="main-nav-bar">
-        <nav-item href="#services">Услуги</nav-item>
-        <nav-item href="#examples">Примеры проектов</nav-item>
-        <nav-item href="#about">О нас</nav-item>
-        <nav-item href="#technologies">Технологии</nav-item>
-        <nav-item href="#reviews">Отзывы</nav-item>
-        <nav-item href="#contacts">Контакты</nav-item>
+        <nav-item href="/#services">Услуги</nav-item>
+        <nav-item href="/#examples">Примеры проектов</nav-item>
+        <nav-item href="/#about">О нас</nav-item>
+        <nav-item href="/#technologies">Технологии</nav-item>
+        <nav-item href="/#reviews">Отзывы</nav-item>
+        <nav-item href="/#contacts">Контакты</nav-item>
     </nav>
 </template>
 
