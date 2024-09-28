@@ -1,1 +1,0 @@
-@charset "UTF-8";.loading[data-v-5db5b85c]{display:flex;align-items:center;justify-content:center}.loading__wrapper[data-v-5db5b85c]{position:relative;width:63px;height:63px}.loading__spinner[data-v-5db5b85c]{position:absolute;top:0;left:0;animation:spin-5db5b85c 2s linear infinite}@keyframes spin-5db5b85c{0%{transform:rotate(0)}to{transform:rotate(360deg)}}
