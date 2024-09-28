@@ -24,7 +24,7 @@ services:
         container_name: web-studio-ui
         restart: always
         volumes:
-            - ./ui/dist:/usr/share/nginx/html
+            - ./ui:/app
             - ./static:/app/static
             - ./media:/app/media
         ports:
