@@ -15,4 +15,4 @@ RUN npm install --only=production
 COPY dist/server .
 
 # Устанавливаем команду запуска
-CMD ["npm", "run", "serve:ssr"]
+CMD ["npm", "run", "ssr:start"]
