@@ -29,7 +29,9 @@
     "swiper": "^11.1.14",
     "vue": "^3.5.10",
     "vue-router": "^4.4.5",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "compression": "^1.7.4",
+    "sirv": "^2.0.4"
   },
   "devDependencies": {
     "@unhead/vue": "^1.11.6",
