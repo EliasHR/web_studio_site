@@ -140,10 +140,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 APPEND_SLASH = True
 
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / ".." / "static"
+STATIC_ROOT = BASE_DIR /  "static"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = BASE_DIR / ".." / "media"
+MEDIA_ROOT = BASE_DIR /  "media"
 
 # Максимальный размер загружаемых файлов (200 мегабайт)
 FILE_UPLOAD_MAX_MEMORY_SIZE = 200 * 1024 * 1024  # 200 MB

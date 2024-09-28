@@ -8,8 +8,8 @@ services:
         volumes:
             - ./api:/api
             - ./api/db.sqlite3:/api/db.sqlite3
-            - ./static:/static
-            - ./media:/media:rw
+            - webstudio_static_volume:/api/static
+            - webstudio_media_volume:/api/media
         #ports:
         #    - "5008:443"
         #env_file:
@@ -24,9 +24,8 @@ services:
         container_name: web-studio-ui
         restart: always
         volumes:
-            - ./ui:/app
-            - ./static:/static
-            - ./media:/media
+            - webstudio_static_volume:/app/static
+            - webstudio_media_volume:/app/media
         ports:
             - "3000:3000"
         networks:
@@ -41,3 +40,7 @@ networks:
 
 volumes:
     logs:
+    webstudio_static_volume:
+        external: true
+    webstudio_media_volume:
+        external: true
