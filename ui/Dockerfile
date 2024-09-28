@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install --only=production
 
 # Копируем остальные файлы проекта
-COPY dist/server .
+COPY . .
 
 # Устанавливаем команду запуска
 CMD ["npm", "run", "ssr:start"]
