@@ -42,12 +42,13 @@ export default {
     },
     setup() {
         const reviewsStore = useReviewStore()
+        reviewsStore.getReviews()
         return {
             reviewsStore
         }
     },
     mounted() {
-        this.reviewsStore.getReviews()
+        //this.reviewsStore.getReviews()
     }
 }
 </script>

@@ -31,7 +31,7 @@ export default defineConfig({
     }),
     viteCompression(),
     createHtmlPlugin({
-      entry: 'src/main.js',
+      entry: 'src/entry-client.js',
       minify: {
         collapseWhitespace: true,
         keepClosingSlash: true,

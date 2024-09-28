@@ -4,14 +4,22 @@ import '@/assets/scss/normalize.scss'
 import '@/assets/scss/variables.scss'
 
 import { createPinia } from 'pinia'
-import { createApp } from 'vue'
+import { createSSRApp } from 'vue';
+import App from './App.vue';
 
 import { VueHeadMixin, createHead } from '@unhead/vue'
-import App from './App.vue'
 import router from './router'
-const app = createApp(App)
 
-app.use(createPinia())
-app.use(router)
-app.use(createHead()).mixin(VueHeadMixin)
-app.mount('#app')
+export const createApp = () => {
+    /**
+     * use createSSRApp to render the Vue App on the server
+     * and send it to the user to do the hydration process
+     */
+    const app = createSSRApp(App);
+    app.use(createPinia())
+    app.use(router)
+    app.use(createHead()).mixin(VueHeadMixin)
+    return {
+        app,
+    };
+};

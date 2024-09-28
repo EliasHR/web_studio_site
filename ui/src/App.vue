@@ -7,7 +7,7 @@ import { ref } from 'vue'
 
 const isProd = ref(import.meta.env.PROD)
 
-if (isProd.value) {
+if (isProd.value && typeof document !== 'undefined') {
     const script_ga1 = document.createElement('script')
     script_ga1.src = 'https://www.googletagmanager.com/gtag/js?id=G-F26TTEQSY3'
     script_ga1.async = true

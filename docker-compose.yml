@@ -18,14 +18,33 @@ services:
             - proxy
             - web-studio-app
     web-studio-ui:
-        image: nginx:latest
+        build:
+            context: ./ui
+            dockerfile: Dockerfile
         container_name: web-studio-ui
         restart: always
         volumes:
             - ./ui/dist:/usr/share/nginx/html
-            - ./nginx/conf.d:/etc/nginx/conf.d
             - ./static:/app/static
             - ./media:/app/media
+        ports:
+            - "3000:3000"
+        networks:
+            - proxy
+            - web-studio-app
+    nginx:
+        image: nginx:latest
+        container_name: web-studio-nginx
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - ./ui/dist/client:/usr/share/nginx/html
+            - ./static:/app/static
+            - ./media:/app/media
+        #ports:
+        #    - "80:80"
+        depends_on:
+            - web-studio-api
+            - web-studio-ui
         networks:
             - proxy
             - web-studio-app

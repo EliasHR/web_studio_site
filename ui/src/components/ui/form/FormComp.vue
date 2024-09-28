@@ -84,7 +84,7 @@ import { reactive } from 'vue'
 
 function getCookie(name) {
     let cookieValue = null
-    if (document.cookie && document.cookie !== '') {
+    if (typeof document !== 'undefined' && document.cookie && document.cookie !== '') {
         const cookies = document.cookie.split(';')
         for (let i = 0; i < cookies.length; i++) {
             const cookie = cookies[i].trim()
@@ -95,8 +95,10 @@ function getCookie(name) {
             }
         }
     }
+
     return cookieValue
 }
+
 const csrftoken = getCookie('csrftoken')
 
 export default {

@@ -111,12 +111,13 @@ export default {
     },
     setup() {
         const projectsStore = useProjectStore()
+        projectsStore.getProjects()
         return {
             projectsStore
         }
     },
     mounted() {
-        this.projectsStore.getProjects()
+        //this.projectsStore.getProjects()
         // Проверка ширины экрана при загрузке
         this.checkScreenWidth()
 
