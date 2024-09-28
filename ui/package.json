@@ -14,7 +14,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
     "generate-sitemap": "node generate-sitemap.js",
-    "ssr:start": "cross-env NODE_ENV=production node server"
+    "ssr:start": "cross-env NODE_ENV=production PORT=3000 node server"
   },
   "dependencies": {
     "@unhead/vue": "^1.11.6",
