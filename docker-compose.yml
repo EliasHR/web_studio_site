@@ -1,5 +1,5 @@
 services:
-    web-studio-api:
+    api:
         build:
             context: ./api
             dockerfile: Dockerfile
@@ -8,8 +8,8 @@ services:
         volumes:
             - ./api:/api
             - ./api/db.sqlite3:/api/db.sqlite3
-            - webstudio_static_volume:/api/static
-            - webstudio_media_volume:/api/media
+            - static:/api/static
+            - media:/api/media
         #ports:
         #    - "5008:443"
         #env_file:
@@ -17,17 +17,32 @@ services:
         networks:
             - proxy
             - web-studio-app
-    web-studio-ui:
+    ui:
         build:
             context: ./ui
             dockerfile: Dockerfile
         container_name: web-studio-ui
         restart: always
         volumes:
-            - webstudio_static_volume:/app/static
-            - webstudio_media_volume:/app/media
+            - static:/app/static
+            - media:/app/media
         ports:
             - "3000:3000"
+        networks:
+            - proxy
+            - web-studio-app
+    nginx:
+        image: nginx:latest
+        container_name: web-studio-nginx
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+            - static:/app/static
+            - media:/app/media
+        ports:
+            - "80:80"
+        depends_on:
+            - web-studio-api
+            - web-studio-ui
         networks:
             - proxy
             - web-studio-app

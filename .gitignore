@@ -60,6 +60,6 @@ experimental/*
 docs/html
 
 media/
-static/
 
 .env*
+*Zone.Identifier
