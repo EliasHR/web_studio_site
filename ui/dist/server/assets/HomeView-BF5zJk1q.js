@@ -1,5 +1,5 @@
 import { useSSRContext, mergeProps, resolveComponent, withCtx, createTextVNode, defineAsyncComponent, unref } from "vue";
-import { ssrRenderAttrs, ssrRenderAttr, ssrRenderComponent } from "vue/server-renderer";
+import { ssrRenderAttrs, ssrRenderAttr, ssrRenderComponent, ssrRenderStyle } from "vue/server-renderer";
 import { _ as _export_sfc, B as ButtonMiddle, D as DialogForm } from "../entry-server.js";
 import "pinia";
 import "vue-router";
@@ -63,7 +63,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
   const _component_button_middle = resolveComponent("button-middle");
   const _component_gift_comp = resolveComponent("gift-comp");
   const _component_dialog_form = resolveComponent("dialog-form");
-  _push(`<!--[--><section class="top" data-v-af21b508><div class="container" data-v-af21b508><div class="top__wrapper" data-v-af21b508><div class="top__info" data-v-af21b508><div class="top__info-text" data-v-af21b508><h1 class="top__title" data-v-af21b508> Разработка<br data-v-af21b508><span class="top__title_gradient" data-v-af21b508>ботов</span> и <span class="top__title_gradient" data-v-af21b508>сайтов</span><br data-v-af21b508> с гарантией результата </h1><div class="top__text" data-v-af21b508> Создаем, внедряем, тестируем, поддерживаем it-продукты </div></div><div class="top__actions" data-v-af21b508>`);
+  _push(`<!--[--><section class="top" style="${ssrRenderStyle({ "margin-top": "96px" })}" data-v-970f6c6d><div class="container" data-v-970f6c6d><div class="top__wrapper" data-v-970f6c6d><div class="top__info" data-v-970f6c6d><div class="top__info-text" data-v-970f6c6d><h1 class="top__title" data-v-970f6c6d> Разработка<br data-v-970f6c6d><span class="top__title_gradient" data-v-970f6c6d>ботов</span> и <span class="top__title_gradient" data-v-970f6c6d>сайтов</span><br data-v-970f6c6d> с гарантией результата </h1><div class="top__text" data-v-970f6c6d> Создаем, внедряем, тестируем, поддерживаем it-продукты </div></div><div class="top__actions" data-v-970f6c6d>`);
   _push(ssrRenderComponent(_component_button_middle, {
     class: "top__calculate",
     onClick: ($event) => $data.showDialog = true
@@ -79,7 +79,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
     }),
     _: 1
   }, _parent));
-  _push(`<a class="top__link" href="https://t.me/code_mode7" target="_blank" data-v-af21b508>`);
+  _push(`<a class="top__link" href="https://t.me/code_mode7" target="_blank" data-v-970f6c6d>`);
   _push(ssrRenderComponent(_component_button_middle, { class: "top__tg-link" }, {
     default: withCtx((_, _push2, _parent2, _scopeId) => {
       if (_push2) {
@@ -92,9 +92,9 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $op
     }),
     _: 1
   }, _parent));
-  _push(`</a></div></div><picture data-v-af21b508><source${ssrRenderAttr("srcset", _imports_0)} media="(max-width: 767.99px)" width="282px" height="182px" data-v-af21b508><source${ssrRenderAttr("srcset", _imports_1)} media="(max-width: 1199.99px)" width="297px" height="249px" data-v-af21b508><img class="top__illustration"${ssrRenderAttr("src", _imports_2)} alt="Декоративный элемент главного блока страницы - треугольные скобки с косой чертой внутри" width="500px" height="350px" data-v-af21b508></picture></div><div class="top__bottom-section" data-v-af21b508><div class="top__gift" data-v-af21b508>`);
+  _push(`</a></div></div><picture data-v-970f6c6d><source${ssrRenderAttr("srcset", _imports_0)} media="(max-width: 767.99px)" width="282px" height="182px" data-v-970f6c6d><source${ssrRenderAttr("srcset", _imports_1)} media="(max-width: 1199.99px)" width="297px" height="249px" data-v-970f6c6d><img class="top__illustration"${ssrRenderAttr("src", _imports_2)} alt="Декоративный элемент главного блока страницы - треугольные скобки с косой чертой внутри" width="500px" height="350px" data-v-970f6c6d></picture></div><div class="top__bottom-section" data-v-970f6c6d><div class="top__gift" data-v-970f6c6d>`);
   _push(ssrRenderComponent(_component_gift_comp, null, null, _parent));
-  _push(`</div><div class="top__services" data-v-af21b508><ul class="top__services-list" data-v-af21b508><li class="top__services-item" data-v-af21b508>Телеграм бот</li><li class="top__services-item" data-v-af21b508>Интеграции с CRM, 1С, МойСклад</li><li class="top__services-item top__services-item_gradient" data-v-af21b508> Решения для бизнеса </li><li class="top__services-item" data-v-af21b508>Интеграции с CRM, 1С, МойСклад</li><li class="top__services-item" data-v-af21b508>Создание сайта</li><li class="top__services-item" data-v-af21b508>Доработка, перенос, редизайн</li></ul></div></div></div></section>`);
+  _push(`</div><div class="top__services" data-v-970f6c6d><ul class="top__services-list" data-v-970f6c6d><li class="top__services-item" data-v-970f6c6d>Телеграм бот</li><li class="top__services-item" data-v-970f6c6d>Интеграции с CRM, 1С, МойСклад</li><li class="top__services-item top__services-item_gradient" data-v-970f6c6d> Решения для бизнеса </li><li class="top__services-item" data-v-970f6c6d>Интеграции с CRM, 1С, МойСклад</li><li class="top__services-item" data-v-970f6c6d>Создание сайта</li><li class="top__services-item" data-v-970f6c6d>Доработка, перенос, редизайн</li></ul></div></div></div></section>`);
   if ($data.showDialog) {
     _push(ssrRenderComponent(_component_dialog_form, {
       onClose: ($event) => $data.showDialog = false,
@@ -123,7 +123,7 @@ _sfc_main$1.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("src/components/TopComp.vue");
   return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
 };
-const TopComp = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-af21b508"]]);
+const TopComp = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["ssrRender", _sfc_ssrRender], ["__scopeId", "data-v-970f6c6d"]]);
 const _sfc_main = {
   __name: "HomeView",
   __ssrInlineRender: true,
