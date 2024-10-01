@@ -1192,7 +1192,7 @@ const _sfc_main = {
       script_ga1.async = true;
       document.head.appendChild(script_ga1);
       const script_ga2 = document.createElement("script");
-      script_ga2.innerHTML = `window.dataLayer = window.dataLayer || [];function gtag() {dataLayer.push(arguments); }gtag('js', new Date());gtag('config', 'G-F26TTEQSY3');`;
+      script_ga2.innerHTML = `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-F26TTEQSY3');`;
       document.head.appendChild(script_ga2);
       const script_ym = document.createElement("script");
       script_ym.type = "text/javascript";
