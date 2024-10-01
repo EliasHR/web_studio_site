@@ -1622,7 +1622,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => import("./assets/HomeView-DRDs0MCB.js")
+      component: () => import("./assets/HomeView-3SHzkoc3.js")
     },
     {
       path: "/404",

@@ -7,20 +7,28 @@
                     <source
                         media="(max-width: 399.99px)"
                         srcset="@/assets/img/reviews_comma_320.png"
+                        width="314px"
+                        height="287px"
                     />
                     <source
                         media="(max-width: 991.99px)"
                         srcset="@/assets/img/reviews_comma_740.png"
+                        width="380px"
+                        height="287px"
                     />
                     <source
                         media="(max-width: 1199.99px)"
                         srcset="@/assets/img/reviews_comma_960.png"
+                        width="378px"
+                        height="351px"
                     />
                     <img
                         loading="lazy"
                         src="@/assets/img/reviews_comma.png"
                         alt="Большая кавычка"
                         class="reviews__image"
+                        width="544px"
+                        height="351px"
                     />
                 </picture>
             </div>

@@ -35,6 +35,7 @@ services:
             - ./nginx/conf.d:/etc/nginx/conf.d
             - ./static:/app/static
             - ./media:/app/media
+            - ./ui/dist/client:/app/client
         ports:
             - "49152:49152"
         depends_on:

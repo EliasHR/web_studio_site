@@ -30,10 +30,14 @@
                     <source
                         srcset="/top_illustration_560.png"
                         media="(max-width: 767.99px)"
+                        width="282px"
+                        height="182px"
                     />
                     <source
                         srcset="/top_illustration_960.png"
                         media="(max-width: 1199.99px)"
+                        width="297px"
+                        height="249px"
                     />
                     <img
                         class="top__illustration"

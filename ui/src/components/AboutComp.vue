@@ -48,16 +48,21 @@
                             <source
                                 srcset="@/assets/img/about_320.png"
                                 media="(max-width: 399.99px)"
+                                width="314px"
+                                height="286px"
                             />
                             <source
                                 srcset="@/assets/img/about_740.png"
                                 media="(max-width: 991.99px)"
+                                width="380px"
+                                height="286px"
                             />
                             <source
                                 srcset="@/assets/img/about_960.png"
                                 media="(max-width: 1199.99px)"
+                                width="420px"
+                                height="817px"
                             />
-
                             <img
                                 class="about__image"
                                 src="@/assets/img/about.png"
