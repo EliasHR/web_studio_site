@@ -35,7 +35,7 @@ services:
         image: nginx:latest
         container_name: web-studio-nginx
         volumes:
-            - ./nginx:/etc/nginx
+            - ./nginx/conf.d:/etc/nginx/conf.d
             - /static:/app/static
             - /media:/app/media
         ports:
