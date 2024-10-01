@@ -1,0 +1,1 @@
+import{_ as a,Q as o,r as t,o as n,g as r,w as c,k as p}from"./index-BCvAkzqw.js";const _={name:"p-small",components:{PBase:o}};function d(e,l,m,f,u,i){const s=t("p-base");return n(),r(s,{class:"paragraph"},{default:c(()=>[p(e.$slots,"default",{},void 0,!0)]),_:3})}const h=a(_,[["render",d],["__scopeId","data-v-c83ded53"]]);export{h as P};
