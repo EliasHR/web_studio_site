@@ -2,20 +2,22 @@
 <html lang="en">
 
 <head>
-  <!-- <script>
-    const head = document.head
-    const link = document.createElement('link')
-    link.rel = 'preload'
-    link.as = 'image'
-    if (window.innerWidth <= 767.99) {
-      link.href = "/top_illustration_560.png"
-    } else if (window.innerWidth <= 1199.99) {
-      link.href = "/top_illustration_960.png"
-    } else {
-      link.href = "/top_illustration.png"
+  <script>
+    if (typeof document !== 'undefined' && typeof window !== 'undefined') {
+      const head = document.head
+      const link = document.createElement('link')
+      link.rel = 'preload'
+      link.as = 'image'
+      if (window.innerWidth <= 767.99) {
+        link.href = "/top_illustration_560.png"
+      } else if (window.innerWidth <= 1199.99) {
+        link.href = "/top_illustration_960.png"
+      } else {
+        link.href = "/top_illustration.png"
+      }
+      head.appendChild(link)
     }
-    head.insertBefore(link, head.firstChild)
-  </script> -->
+  </script>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
