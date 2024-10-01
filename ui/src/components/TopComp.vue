@@ -1,8 +1,5 @@
 <template>
-    <section
-        class="top"
-        style="margin-top: 96px;"
-    >
+    <section class="top">
         <div class="container">
             <div class="top__wrapper">
                 <div class="top__info">
@@ -100,7 +97,7 @@ export default {
 .top {
     padding: 24px 0;
     margin-bottom: 40px;
-    //margin-top: 96px;
+    margin-top: 96px;
     &__wrapper {
         background: var(--primary-seryy);
         border-radius: 8px;
@@ -215,7 +212,7 @@ export default {
 @media (max-width: 991.99px) {
     .top {
         margin-bottom: 78px;
-        margin-top: 64px !important; 
+        margin-top: 64px;
 
         &__wrapper {
             min-height: 336px;

@@ -64,6 +64,7 @@ export default {
 <style lang="scss">
 .reviews {
     scroll-margin-top: 96px;
+    min-height: 451px;
     &__wrapper {
         display: grid;
         gap: 50px;
@@ -92,6 +93,7 @@ export default {
 @media (max-width: 991.99px) {
     .reviews {
         scroll-margin-top: 64px;
+        min-height: 742px;
         &__title {
             text-align: center;
             margin-bottom: 24px;
@@ -107,10 +109,14 @@ export default {
 }
 
 @media (max-width: 574.99px) {
+    .reviews {
+        min-height: 845px;
+    }
 }
 
 @media (max-width: 399.99px) {
     .reviews {
+        min-height: 913px;
         &__image {
             max-width: 314px;
         }

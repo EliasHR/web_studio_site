@@ -174,6 +174,7 @@ export default {
 <style lang="scss" scoped>
 .projects {
     scroll-margin-top: 96px;
+    min-height: 1142px;
     &__title {
         margin-bottom: 24px;
     }
@@ -182,6 +183,7 @@ export default {
         gap: 28px;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
+        
     }
     &__item {
         height: 336px;
@@ -240,6 +242,7 @@ export default {
 
 @media (max-width: 1199.99px) {
     .projects {
+        min-height: 1870px;
         &__wrapper {
             gap: 28px;
             grid-template-columns: repeat(2, auto);
@@ -254,6 +257,7 @@ export default {
 
 @media (max-width: 991.99px) {
     .projects {
+        min-height: 2862px;
         scroll-margin-top: 64px;
         &__title {
             text-align: center;
@@ -289,6 +293,7 @@ export default {
 
 @media (max-width: 399.99px) {
     .projects {
+        min-height: 2686px;
         &__item {
             height: 314px;
         }

@@ -1,8 +1,9 @@
 <script setup>
 import { RouterView } from 'vue-router'
+import { defineAsyncComponent } from 'vue'
 import HeaderComp from '@/components/HeaderComp.vue'
-import FooterComp from '@/components/FooterComp.vue'
-import FloatingButtons from '@/components/ui/FloatingButtons.vue'
+const FooterComp = defineAsyncComponent(() => import('@/components/FooterComp.vue'))
+const FloatingButtons = defineAsyncComponent(() => import('@/components/ui/FloatingButtons.vue'))
 import { ref } from 'vue'
 
 const isProd = ref(import.meta.env.PROD)
