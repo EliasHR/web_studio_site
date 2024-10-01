@@ -17,8 +17,8 @@ RUN apk add --no-cache \
     zlib-dev
 
 
-# Устанавливаем все зависимости, включая devDependencies
-RUN npm install
+# Устанавливаем зависимости
+RUN npm install --omit=dev
 
 # Копируем остальные файлы проекта
 COPY . /app
