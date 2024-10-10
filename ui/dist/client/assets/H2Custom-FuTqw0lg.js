@@ -1,1 +1,0 @@
-import{_ as s,o,c as t,k as c}from"./index-BCvAkzqw.js";const n={name:"h2-custom"},a={class:"h2"};function r(e,_,d,f,p,l){return o(),t("h2",a,[c(e.$slots,"default",{},void 0)])}const u=s(n,[["render",r],["__scopeId","data-v-5f45893f"]]);export{u as H};

@@ -1246,7 +1246,7 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: () => import("./assets/HomeView-Ga8DHLMA.js")
+      component: () => import("./assets/HomeView-CkghU5yB.js")
     },
     {
       path: "/404",

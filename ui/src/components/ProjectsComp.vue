@@ -161,10 +161,14 @@ export default {
                     return project.cover_314_webp ? project.cover_314_webp : project.cover_314
             }
         },
-        handleClick(enable_detail, project_url) {
+        async handleClick(enable_detail, project_url) {
+            await this.projectsStore.getProject(project_url)
             if (enable_detail) {
-                this.projectsStore.getProject(project_url)
                 this.showDialogProject = true
+            } else {
+                if (this.projectsStore.project.project_link) {
+                    window.open(this.projectsStore.project.project_link, '_blank')
+                }
             }
         }
     }
@@ -183,7 +187,6 @@ export default {
         gap: 28px;
         grid-template-columns: repeat(3, auto);
         grid-template-rows: repeat(3, auto);
-        
     }
     &__item {
         height: 336px;
